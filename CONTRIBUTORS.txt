@@ -9,3 +9,6 @@
 # they accept any liabilities with respect to them.
 
 - Rafael Corchuelo (corchu@us.es)
+- Jose Mª García Quijada (josgarqui@alum.us.es)
+- Eloy Moreno Dominguez (elomordom@alum.us.es)
+- Juan Antonio Mena Vargas (juamenvar@alum.us.es)
