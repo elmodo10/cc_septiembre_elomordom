@@ -33,8 +33,8 @@ public class Peep extends AbstractEntity {
 
     @NotBlank
     @Length(min=1, max=100)
-    protected String writer;
-
+    protected String writer; 
+    
     @NotBlank
     @Length(min=1, max=100)
     protected String heading;
