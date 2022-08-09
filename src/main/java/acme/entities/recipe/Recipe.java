@@ -1,14 +1,24 @@
 package acme.entities.recipe;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+
+import javax.persistence.OneToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.quantity.Quantity;
 import acme.framework.entities.AbstractEntity;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,19 +30,9 @@ public class Recipe extends AbstractEntity{
 
 	private static final long serialVersionUID = 1L;
 	
-//	@OneToOne
-//	@Valid
-//	@NotNull
-//	@Basic(optional = false)
-//	protected Ingredient ingredient;
+
 	
-//	@OneToMany
-//	@Valid
-//	@NotNull
-//	@Basic(optional = false)
-//	protected KitchenUtensil kitchenUtensil;
-	
-	@Pattern(regexp = "“^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
+	@Pattern(regexp = "^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
 	@Column(unique=true)
 	protected String code;
 	
@@ -41,14 +41,21 @@ public class Recipe extends AbstractEntity{
 	protected String heading;
 	
 	@NotBlank
-	@Length(max = 255)
+	@Length(min = 1, max = 255)
 	protected String description;
 	
 	@NotBlank
-	@Length(max = 255)
+	@Length(min = 1, max = 255)
 	protected String preparationNotes;
 	
 	@URL
 	protected String link;
+	
+	@Valid
+	@OneToMany(mappedBy="recipe", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	protected List<Quantity> quantity;
+	
+	
+
 
 }

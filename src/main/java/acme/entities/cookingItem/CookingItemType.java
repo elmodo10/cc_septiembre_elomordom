@@ -1,4 +1,4 @@
-package acme.enums;
+package acme.entities.cookingItem;
 
 
 public enum CookingItemType {

@@ -8,8 +8,7 @@ import java.util.Map;
 
 import org.springframework.data.util.Pair;
 
-
-import acme.enums.CookingItemType;
+import acme.entities.cookingItem.CookingItemType;
 import acme.enums.Status;
 import lombok.Getter;
 import lombok.Setter;
