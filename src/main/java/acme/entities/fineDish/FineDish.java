@@ -13,10 +13,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
-
 
 import acme.enums.Status;
 import acme.framework.datatypes.Money;
@@ -36,7 +34,7 @@ public class FineDish extends AbstractEntity {
 	@NotNull
 	protected Status status;
 	
-	@Pattern(regexp = "“^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
+	@Pattern(regexp = "^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
 	@Column(unique=true)
 	protected String code;
 	
