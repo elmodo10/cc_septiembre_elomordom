@@ -5,6 +5,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Range;
+import org.springframework.data.util.Pair;
 
 import acme.framework.entities.AbstractEntity;
 
@@ -13,7 +14,7 @@ public class Configuration extends AbstractEntity  {
 	private static final long serialVersionUID = 1L;
 	
 	@NotBlank
-	protected String spamWords;
+	protected Pair spamWords;
 	
 	@NotNull
 	@Range(min = 0, max = 1)
