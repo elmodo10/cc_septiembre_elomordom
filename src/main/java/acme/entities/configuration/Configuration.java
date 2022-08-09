@@ -3,6 +3,7 @@ package acme.entities.configuration;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -11,12 +12,16 @@ import org.hibernate.validator.constraints.Range;
 import org.springframework.data.util.Pair;
 
 import acme.framework.entities.AbstractEntity;
+import lombok.Getter;
+import lombok.Setter;
  
-
+@Entity
+@Getter
+@Setter
 public class Configuration extends AbstractEntity  {
 
 	private static final long serialVersionUID = 1L;
-	//List<Pair<String, Double>>
+	
 	@NotBlank
 	protected String spamWords;
 	
@@ -43,8 +48,7 @@ public class Configuration extends AbstractEntity  {
 		
 		for (final String s : sp) {
 			
-			this.spamWords.replace("“", "");
-			this.spamWords.replace("”", "");
+		
 			String[] ss = s.split(";");
 			ls.add(Pair.of(ss[0], Double.parseDouble(ss[1])));
 		
