@@ -19,4 +19,7 @@ public interface AnyCookingItemRepository extends AbstractRepository {
 
 	@Query("select t from CookingItem t where t.id= :id")
 	CookingItem findCookingItemById(int id);
+	
+	@Query("select q.cookingitem from Quantity q where q.recipe.id= :id")
+	Collection<CookingItem> findCookingItemByRecipeId(int id);
 }

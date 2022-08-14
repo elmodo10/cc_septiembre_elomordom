@@ -23,7 +23,9 @@ master.menu.anonymous.favourite-link-elomordom = 49546083N: Moreno, Eloy
 master.menu.anonymous.favourite-link-juamenvar = 77200485L: Mena, Juan Antonio
 master.menu.anonymous.list-ingredient= List Ingredients
 master.menu.anonymous.list-kitchenUtensil= List Kitchen Utensil
+master.menu.anonymous.list-recipe= List Recipe
 master.menu.authenticated.user-account = List Enabled Accounts
+
 
 # master.menu.administrator ###################################################
 master.menu.administrator.configurations = Configurations
