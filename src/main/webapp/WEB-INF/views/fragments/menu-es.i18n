@@ -27,7 +27,7 @@ master.menu.anonymous.user-account = Listar cuentas habilitadas
 
 
 # master.menu.administrator ###################################################
-
+master.menu.administrator.configurations = Configuracion
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
