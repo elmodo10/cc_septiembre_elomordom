@@ -43,6 +43,9 @@ public class CookingItem extends AbstractEntity{
 	@URL
 	protected String link;
 	
+	@NotNull
+	protected Status status;
+	
 
 	@NotNull
 	protected CookingItemType type;
