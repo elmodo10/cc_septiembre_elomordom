@@ -19,6 +19,7 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+		<acme:menu-suboption code="master.menu.anonymous.user-account" action="/any/user-account/list-enabled"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-elomordom" action="https://youtube.com"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-josgarqui" action="https://sevillafc.es"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-juamenvar" action="https://www.netflix.com"/>
@@ -29,6 +30,7 @@
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-suboption code="master.menu.administrator.configurations" action="/administrator/configuration/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
@@ -50,6 +52,8 @@
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
+		<acme:menu-suboption code="master.menu.authenticated.configuration" action="/authenticated/configuration/show"/>
+		<acme:menu-suboption code="master.menu.authenticated.user-account" action="/any/user-account/list-enabled"/>
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRole('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>
