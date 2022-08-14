@@ -1,0 +1,16 @@
+chef.cookingItem.list.label.name = Nombre 
+chef.cookingItem.list.label.code= Código
+chef.cookingItem.list.label.retailPrice= Precio
+chef.cookingItem.list.label.description = Descripción 
+chef.cookingItem.list.label.link = Enlace
+chef.cookingItem.list.label.type = Type
+
+chef.cookingItem.form.label.name = Nombre
+chef.cookingItem.form.label.code= Código
+chef.cookingItem.form.label.technology= Tecnología
+chef.cookingItem.form.label.description= Descripción
+chef.cookingItem.form.label.link= Enlace
+chef.cookingItem.form.label.retailPrice= Precio
+chef.cookingItem.form.label.type = Tipo
+
+chef.cookingItem.form.buttom.items= Items
