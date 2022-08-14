@@ -19,6 +19,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
 public class Peep extends AbstractEntity {
 	
     // Serialisation identifier -----------------------------------------------
