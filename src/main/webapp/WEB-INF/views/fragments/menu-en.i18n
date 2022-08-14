@@ -26,7 +26,7 @@ master.menu.anonymous.list-kitchenUtensil= List Kitchen Utensil
 master.menu.authenticated.user-account = List Enabled Accounts
 
 # master.menu.administrator ###################################################
-
+master.menu.administrator.configurations = Configurations
 master.menu.administrator = Administrator
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
