@@ -11,8 +11,6 @@
 	<acme:input-textbox code="any.recipe.form.label.description" path="description" readonly="true"/>
 	<acme:input-textbox code="any.recipe.form.label.preparationNotes" path="preparationNotes" readonly="true"/>
 	<acme:input-url code="any.recipe.form.label.link" path="link"/>
-	
-	
-	<%--<acme:button code="any.recipe.form.buttom.items" action="/any/item/list-by-toolkit?id=${id}"/> --%>
+	<acme:button code="any.recipe.form.buttom.cookingitems" action="/any/cooking-item/list-by-recipe?id=${id}"/> 
 	
 </acme:form>

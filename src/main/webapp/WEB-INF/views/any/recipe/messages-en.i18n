@@ -10,4 +10,4 @@ any.recipe.form.label.description=Description
 any.recipe.form.label.preparationNotes=Preparation Notes
 any.recipe.form.label.link=Link
 
-any.toolkit.form.buttom.items = Items
+any.recipe.form.buttom.cookingitems = Cooking Items
