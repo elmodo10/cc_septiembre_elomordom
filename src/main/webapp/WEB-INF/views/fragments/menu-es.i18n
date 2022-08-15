@@ -27,7 +27,9 @@ master.menu.anonymous.list-recipe= Lista de Recetas
 master.menu.anonymous.list-peep = Lista de Vistazos
 master.menu.anonymous.user-account = Listar cuentas habilitadas
 
-
+# master.menu.authenticated #######################################################
+master.menu.authenticated = Autenticado
+master.menu.authenticated.bulletin = Lista de Boletines
 
 # master.menu.administrator ###################################################
 master.menu.administrator.configurations = Configuracion
