@@ -52,6 +52,8 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.chef = Chef
 master.menu.chef.ingredients = Listar ingredientes propios
 master.menu.chef.kitchenUtensil = Listar utensilios de cocina propios
+master.menu.chef.recipes= Listar recetas propias
+
 
 # master.menu.user-account ####################################################
 master.menu.authenticated.configuration = Configuracion del sistema
