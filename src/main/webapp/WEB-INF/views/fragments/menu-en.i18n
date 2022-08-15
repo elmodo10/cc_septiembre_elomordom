@@ -24,6 +24,7 @@ master.menu.anonymous.favourite-link-juamenvar = 77200485L: Mena, Juan Antonio
 master.menu.anonymous.list-ingredient= List Ingredients
 master.menu.anonymous.list-kitchenUtensil= List Kitchen Utensil
 master.menu.anonymous.list-recipe= List Recipe
+master.menu.anonymous.list-peep = List Peep
 master.menu.authenticated.user-account = List Enabled Accounts
 
 
@@ -51,6 +52,7 @@ master.menu.chef = Chef
 master.menu.chef.ingredients = List Own Ingredients
 master.menu.chef.kitchenUtensil = List Own Kitchen Utensils
 master.menu.chef.recipes= List Own Recipes
+
 
 # master.menu.user-account ####################################################
 master.menu.authenticated.configuration = System configuration
