@@ -46,7 +46,11 @@ master.menu.administrator.shut-down = Shut down
 
 master.menu.epicure = Epicure
 master.menu.epicure.dashboard = Epicure Dasboard
+master.menu.epicure.finedish = Fine Dish List
 
+
+
+master.menu.chef.finedish
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
@@ -62,7 +66,7 @@ master.menu.chef = Chef
 master.menu.chef.ingredients = List Own Ingredients
 master.menu.chef.kitchenUtensil = List Own Kitchen Utensils
 master.menu.chef.recipes= List Own Recipes
-
+master.menu.chef.finedish= List fine dishes
 
 # master.menu.user-account ####################################################
 master.menu.authenticated.configuration = System configuration

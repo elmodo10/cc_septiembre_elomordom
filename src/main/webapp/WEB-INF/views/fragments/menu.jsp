@@ -50,9 +50,11 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
-			
+						<acme:menu-suboption code="master.menu.epicure.finedish" action="/epicure/fine-dish/list-mine"/>
 			<acme:menu-suboption code="master.menu.epicure.dashboard" action="/epicure/epicure-dashboard/show"/>
 		</acme:menu-option>
+		
+		
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
@@ -65,6 +67,7 @@
 
 		
 			<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+			<acme:menu-suboption code="master.menu.chef.finedish" action="/chef/fine-dish/list-mine"/>
 			<acme:menu-suboption code="master.menu.chef.ingredients" action="/chef/cooking-item/list-ingredient"/>
 			<acme:menu-suboption code="master.menu.chef.kitchenUtensil" action="/chef/cooking-item/list-kitchenUtensil"/>
 			<acme:menu-suboption code="master.menu.chef.recipes" action="/chef/recipe/list-mine"/>

@@ -1,0 +1,22 @@
+
+authenticated.epicure.finedish.form.label.status = Status
+authenticated.epicure.finedish.form.label.code = Code
+authenticated.epicure.finedish.form.label.request = Request
+authenticated.epicure.finedish.form.label.budget = Budget
+authenticated.epicure.finedish.form.label.startsAt = Start At
+authenticated.epicure.finedish.form.label.finishesAt = Finishes At
+authenticated.epicure.finedish.form.label.link = Link
+authenticated.epicure.finedish.form.label.chef.organisation = Chef Organisation
+authenticated.epicure.finedish.form.label.chef.assertion = Chef Assertion
+authenticated.epicure.finedish.form.label.chef.link = Chef Link
+
+epicure.finedish.form.buttom.finedish-reports = finedish Reports
+
+
+
+authenticated.epicure.finedish.list.label.status = Status
+authenticated.epicure.finedish.list.label.code = Code
+authenticated.epicure.finedish.list.label.legalStuff = Legal Stuff
+authenticated.epicure.finedish.list.label.budget = Budget
+authenticated.epicure.finedish.list.label.startsAt = Start At
+authenticated.epicure.finedish.list.label.finishesAt = Finishes At

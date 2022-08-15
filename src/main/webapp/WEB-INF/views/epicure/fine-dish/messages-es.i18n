@@ -1,0 +1,23 @@
+
+authenticated.epicure.finedish.form.label.status = Estado
+authenticated.epicure.finedish.form.label.code = Código
+authenticated.epicure.finedish.form.label.request = Solicitud
+authenticated.epicure.finedish.form.label.budget = Presupuesto
+authenticated.epicure.finedish.form.label.startsAt = Empieza A
+authenticated.epicure.finedish.form.label.finishesAt = Termina A
+authenticated.epicure.finedish.form.label.link = Link
+authenticated.epicure.finedish.form.label.chef.organisation = Organizacion del chef
+authenticated.epicure.finedish.form.label.chef.assertion = Afirmacion del chef
+authenticated.epicure.finedish.form.label.chef.link = Link del Invetor
+
+epicure.finedish.form.buttom.finedish-reports = Reportes del buen plato
+
+
+
+
+authenticated.epicure.finedish.list.label.status = Estado
+authenticated.epicure.finedish.list.label.code = Código
+
+authenticated.epicure.finedish.list.label.budget = Presupuesto
+
+

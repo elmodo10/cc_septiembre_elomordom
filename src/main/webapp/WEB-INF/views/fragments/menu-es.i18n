@@ -45,7 +45,7 @@ master.menu.administrator.shut-down = Parar el sistema
 
 master.menu.epicure = Sibarita
 master.menu.epicure.dashboard = Dasboard de sibarita
-
+master.menu.epicure.finedish = lista de buenos platos
 
 # master.menu.provider ########################################################
 
@@ -62,7 +62,7 @@ master.menu.chef = Chef
 master.menu.chef.ingredients = Listar ingredientes propios
 master.menu.chef.kitchenUtensil = Listar utensilios de cocina propios
 master.menu.chef.recipes= Listar recetas propias
-
+master.menu.chef.finedish= Lista buenos platos
 
 # master.menu.user-account ####################################################
 master.menu.authenticated.configuration = Configuracion del sistema
