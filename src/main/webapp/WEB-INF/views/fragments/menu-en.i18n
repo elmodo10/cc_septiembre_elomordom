@@ -66,7 +66,7 @@ master.menu.chef = Chef
 master.menu.chef.ingredients = List Own Ingredients
 master.menu.chef.kitchenUtensil = List Own Kitchen Utensils
 master.menu.chef.recipes= List Own Recipes
-master.menu.chef.finedish= List fine dishes
+master.menu.chef.finedish= List Own Fine Dishes
 
 # master.menu.user-account ####################################################
 master.menu.authenticated.configuration = System configuration

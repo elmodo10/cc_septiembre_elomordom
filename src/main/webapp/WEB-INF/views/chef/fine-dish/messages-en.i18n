@@ -11,5 +11,4 @@ chef.finedish.form.label.finishesAt = finishesAt
 chef.finedish.form.label.link = Link
 chef.finedish.form.label.epicureorganisation = Epicure Organisation
 chef.finedish.form.label.epicureassertion = Epicure Assertion
-chef.finedish.form.buttom.finedish-report = finedish Reports
-
+chef.finedish.form.buttom.memorandum = Memorandum
