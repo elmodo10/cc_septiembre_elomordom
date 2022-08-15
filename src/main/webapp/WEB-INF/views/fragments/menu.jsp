@@ -45,6 +45,17 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		
+			<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+			<%-- 
+			<acme:menu-suboption code="master.menu.chef.ingredients" action="/chef/cooking-item/list-ingredient"/>
+			<acme:menu-suboption code="master.menu.chef.kitchenUtensil" action="/chef/cooking-item/list-kitchenUtensil"/>
+			--%>
+		
+			<acme:menu-suboption code="master.menu.chef.recipes" action="/chef/recipe/list-mine"/>
+		
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
