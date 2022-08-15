@@ -32,6 +32,7 @@ master.menu.authenticated = Autenticado
 master.menu.authenticated.bulletin = Lista de Boletines
 
 # master.menu.administrator ###################################################
+master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.configurations = Configuracion
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
@@ -39,6 +40,12 @@ master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+
+# master.menu.epicure ########################################################
+
+master.menu.epicure = Sibarita
+master.menu.epicure.dashboard = Dasboard de sibarita
+
 
 # master.menu.provider ########################################################
 
