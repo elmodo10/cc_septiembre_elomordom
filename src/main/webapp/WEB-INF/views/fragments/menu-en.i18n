@@ -27,6 +27,9 @@ master.menu.anonymous.list-recipe= List Recipe
 master.menu.anonymous.list-peep = List Peep
 master.menu.authenticated.user-account = List Enabled Accounts
 
+# master.menu.authenticated #######################################################
+master.menu.authenticated = Authenticated
+master.menu.authenticated.bulletin = List Bulletins
 
 # master.menu.administrator ###################################################
 master.menu.administrator.configurations = Configurations
