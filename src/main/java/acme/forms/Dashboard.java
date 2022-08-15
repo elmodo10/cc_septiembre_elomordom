@@ -56,7 +56,7 @@ public class Dashboard implements Serializable {
 	
 	
 	public List<String> getTotalsDataKeys() {
-		return new ArrayList<String>(Arrays.asList("ingredient", "kitchenUtensil", "Proposed", "Accepted", "Denied"));
+		return new ArrayList<String>(Arrays.asList("Ingredient", "Kitchen_Utensil", "Proposed", "Accepted", "Denied"));
 	}
 	
 	public List<String> getDataKeys() {

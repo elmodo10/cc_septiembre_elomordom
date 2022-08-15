@@ -21,7 +21,13 @@ public class EpicureDashboard implements Serializable {
 	// Attributes -------------------------------------------------------------
 	
 	
+	public List<String> getTotalscurre() {
+		return new ArrayList<String>(Arrays.asList("EUR", "USD", "GBP"));
+	}
 	
+	public List<String> getDataKeys() {
+		return new ArrayList<String>(Arrays.asList("Min", "Max", "Avg", "Dev"));
+	}
 	
 	
 	Map<Status,  Integer> totalNumberFineDishes;
