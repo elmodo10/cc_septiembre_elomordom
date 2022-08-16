@@ -4,11 +4,11 @@ chef.finedish.list.label.budget = Presupuesto
 
 chef.finedish.form.label.status = Estado
 chef.finedish.form.label.code = Código
-chef.finedish.form.label.request = solicitud
+chef.finedish.form.label.request = Solicitud
 chef.finedish.form.label.budget = Presupuesto
-chef.finedish.form.label.startsAt = Fecha inicio
-chef.finedish.form.label.finishesAt = Fecha fin
+chef.finedish.form.label.startsAt = Fecha de inicio
+chef.finedish.form.label.finishesAt = Fecha de fin
 chef.finedish.form.label.link = Link
-chef.finedish.form.label.epicureorganisation = Organizacion del sibarita
+chef.finedish.form.label.epicureorganisation = Organización del sibarita
 chef.finedish.form.label.epicureassertion = Afirmacion del sibarita
 chef.finedish.form.buttom.memorandum = Memorandum

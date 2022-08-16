@@ -45,8 +45,8 @@ master.menu.administrator.shut-down = Shut down
 # master.menu.epicure ########################################################
 
 master.menu.epicure = Epicure
-master.menu.epicure.dashboard = Epicure Dasboard
-master.menu.epicure.finedish = Fine Dish List
+master.menu.epicure.dashboard = Epicure Dashboard
+master.menu.epicure.finedish = List Fine Dishes 
 
 
 

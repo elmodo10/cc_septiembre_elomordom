@@ -48,7 +48,7 @@ public class EpicureMemorandumShowService implements AbstractShowService<Epicure
 		assert model != null;
 		
 		
-		request.unbind(entity, model,  "seqNumber", "instantiationMoment", "report", "link");
+		request.unbind(entity, model,  "seqNumber", "instantiationMoment", "report", "link", "fineDish.status", "fineDish.code", "fineDish.request", "fineDish.budget", "fineDish.startsAt", "fineDish.finishesAt", "fineDish.link");
 	}
 	
 }
