@@ -1,0 +1,11 @@
+
+epicure.memorandum.form.label.seqNumber = Automatic sequence number
+epicure.memorandum.form.label.instantiationMoment = Creation Moment
+epicure.memorandum.form.label.report = Report
+epicure.memorandum.form.label.link = Link
+
+epicure.fineDish.list.label.seqNumber = Automatic sequence number
+epicure.fineDish.list.label.instantiationMoment = Creation Moment
+epicure.fineDish.list.label.report = Report
+epicure.fineDish.list.label.link = Link
+

@@ -16,7 +16,7 @@
 	<acme:input-textarea code="authenticated.epicure.finedish.form.label.chef.organisation" path="chef.organisation"/>
 	<acme:input-textarea code="authenticated.epicure.finedish.form.label.chef.assertion" path="chef.assertion"/>
 	<acme:input-url code="authenticated.epicure.finedish.form.label.chef.link" path="chef.link"/>
-	<acme:button code="epicure.finedish.form.buttom.finedish-reports" action="/epicure/finedish-report/list-by-finedish?id=${id}"/>
+	<acme:button code="epicure.finedish.form.buttom.finedish-reports" action="/epicure/memorandum/list-by-fineDish?id=${id}"/>
 	
 
 </acme:form>
