@@ -48,7 +48,7 @@ public class ChefFineDishShowService implements AbstractShowService<Chef, FineDi
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "status", "code", "request", "budget", "startsAt", "finishesAt", "link", "epicure.organisation", "epicure.assertion");
+		request.unbind(entity, model, "status", "code", "request", "budget", "startsAt", "finishesAt", "link", "epicure.organisation", "epicure.assertion","epicure.link");
 		
 		
 		

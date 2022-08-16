@@ -4,12 +4,11 @@ chef.finedish.list.label.budget = Budget
 
 chef.finedish.form.label.status = Status
 chef.finedish.form.label.code = Code
-chef.finedish.form.label.request = request
+chef.finedish.form.label.request = Request
 chef.finedish.form.label.budget = Budget
 chef.finedish.form.label.startsAt = Starts At
 chef.finedish.form.label.finishesAt = finishesAt
 chef.finedish.form.label.link = Link
 chef.finedish.form.label.epicureorganisation = Epicure Organisation
 chef.finedish.form.label.epicureassertion = Epicure Assertion
-chef.finedish.form.buttom.finedish-report = finedish Reports
-
+chef.finedish.form.buttom.memorandum = Memorandum
