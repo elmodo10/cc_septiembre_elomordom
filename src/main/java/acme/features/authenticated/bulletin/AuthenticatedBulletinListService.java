@@ -42,6 +42,6 @@ public class AuthenticatedBulletinListService implements AbstractListService<Aut
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "heading", "instationMoment", "link" , "critic");
+		request.unbind(entity, model, "heading", "instationMoment", "pieceOfText", "link" , "critic");
 	}
 }
