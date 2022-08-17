@@ -1,0 +1,6 @@
+recordIndex,status,code,request,budget,startsAt,finishesAt,link
+0,accepted,GG:GQA-943,Texto de prueba,EUR 50.00,2021/02/02 15:22,2021/02/03 15:22,https://youtube.com/
+1,accepted,AB:ABC-153,Texto de prueba,EUR 50.00,2021/02/02 15:22,2021/02/03 15:22,https://youtube.com/
+2,accepted,ER:PIK-153,Texto de prueba,EUR 68.00,2021/02/02 15:22,2021/02/03 15:22,https://youtube.com/
+3,denied,AB:ABC-062,Texto de prueba,EUR 80.00,2021/02/02 15:22,2021/02/03 15:22,https://youtube.com/
+4,denied,TY:SFX-062,Texto de prueba,EUR 13.00,2021/02/02 15:22,2021/02/03 15:22,https://youtube.com/
