@@ -1,5 +1,6 @@
 package acme.entities.cookingItem;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -53,6 +54,8 @@ public class CookingItem extends AbstractEntity{
 	
 	@ManyToOne
 	@Valid
+	@NotNull
+	@Basic(optional = false)
 	protected Chef chef;
 	
 	
