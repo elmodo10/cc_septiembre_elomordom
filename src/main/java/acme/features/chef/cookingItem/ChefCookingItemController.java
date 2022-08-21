@@ -21,11 +21,27 @@ public class ChefCookingItemController extends AbstractController<Chef, CookingI
 	@Autowired
 	protected ChefCookingItemListOwnKitchenUtensilService listByKitchenUtensilService;
 	
+	@Autowired
+	protected ChefCookingItemCreateService createCookingItemService;
+	
+	@Autowired
+	protected ChefCookingItemDeleteService deleteCookingItemService;
+	
+	@Autowired
+	protected ChefCookingItemUpdateService updateCookingItemService;
+	
+	@Autowired
+	protected ChefCookingItemPublishService publishCookingItemService;
+	
 	@PostConstruct
 	protected void initialize() {
 		super.addCommand("list-ingredient", "list", this.listByIngredientService);
 		super.addCommand("list-kitchenUtensil", "list", this.listByKitchenUtensilService);
 		super.addCommand("show", this.showCookingItemService);
+		super.addCommand("create", this.createCookingItemService);
+		super.addCommand("delete", this.deleteCookingItemService);
+		super.addCommand("update", this.updateCookingItemService);
+		super.addCommand("publish","update", this.publishCookingItemService);
 
 	}
 	

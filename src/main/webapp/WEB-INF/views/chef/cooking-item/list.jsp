@@ -11,3 +11,5 @@
 	<acme:list-column code="chef.cookingItem.list.label.link" path="link" width="20%"/>
 	<acme:list-column code="chef.cookingItem.list.label.type" path="type" width="20%"/>
 </acme:list>
+
+<acme:button code="chef.cookingItem.list.button.create" action="/chef/cooking-item/create"/>

@@ -3,7 +3,7 @@ chef.cookingItem.list.label.code= Código
 chef.cookingItem.list.label.retailPrice= Precio
 chef.cookingItem.list.label.description = Descripción 
 chef.cookingItem.list.label.link = Enlace
-chef.cookingItem.list.label.type = Type
+chef.cookingItem.list.label.type = Tipo
 
 chef.cookingItem.form.label.name = Nombre
 chef.cookingItem.form.label.code= Código
@@ -12,5 +12,17 @@ chef.cookingItem.form.label.description= Descripción
 chef.cookingItem.form.label.link= Enlace
 chef.cookingItem.form.label.retailPrice= Precio
 chef.cookingItem.form.label.type = Tipo
+chef.cookingItem.form.label.status=Estado
+
+chef.cookingItem.form.label.ingredient=Ingrediente
+chef.cookingItem.form.label.kitchen-utensil= Utensilio de cocina
+
+chef.cookingItem.list.button.create= Crea Artículo de cocina
+chef.cookingItem.form.button.create= Crealo!
 
 chef.cookingItem.form.buttom.items= Items
+
+
+chef.cookingItem.form.button.delete=Bórralo
+chef.cookingItem.form.button.update= Actualízalo
+chef.cookingItem.form.button.publish= Publícalo
