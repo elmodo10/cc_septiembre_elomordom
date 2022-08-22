@@ -1,3 +1,4 @@
+
 package acme.entities.configuration;
 
 import java.util.ArrayList;
@@ -14,65 +15,56 @@ import org.springframework.data.util.Pair;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
- 
+
 @Entity
 @Getter
 @Setter
-public class Configuration extends AbstractEntity  {
+public class Configuration extends AbstractEntity {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long	serialVersionUID	= 1L;
+
 	@NotBlank
-	protected String spamWords;
-	
+	protected String			spamWords;
+
 	@NotNull
 	@Range(min = 0, max = 1)
-	protected Double spamThreshold;
-	
+	protected Double			spamThreshold;
+
 	@NotBlank
-	@Pattern(regexp="[A-Z]{3}")
-	protected String defaultCurr;
-	
+	@Pattern(regexp = "[A-Z]{3}")
+	protected String			defaultCurr;
+
 	@NotBlank
 	@Pattern(regexp = "([A-Z]{3})(,\\s*[A-Z]{3})*")
-	protected String acceptedCurr;
+	protected String			acceptedCurr;
+
 
 	public boolean isSpam(final String text) {
 		final String[] lowerCaseText = text.toLowerCase().replaceAll("\\s+", " ").split(" ");
-		int spamCount = 0;
-		this.spamWords.replace("(", "");
-		this.spamWords.replace(")", "");
-		List<Pair<String, Double>> ls = new ArrayList<Pair<String, Double>>();
-		
+		double spamCount = 0;
+		final List<Pair<String, Double>> ls = new ArrayList<Pair<String, Double>>();
+
 		final String[] sp = this.spamWords.split(",");
-		
+
 		for (final String s : sp) {
-			
-		
-			String[] ss = s.split(";");
-			ls.add(Pair.of(ss[0], Double.parseDouble(ss[1])));
-		
+
+			final String[] ss = s.split(";");
+			ls.add(Pair.of(ss[0].replace("(", ""), Double.parseDouble(ss[1].replace(")", ""))));
+
 		}
-		
+
 		for (final Pair<String, Double> s : ls) {
-			if (text.toLowerCase().trim().replaceAll("\\s+", " ").contains(s.getFirst())) {
-				spamCount++;
-			}
-			for (int i = 0; i < lowerCaseText.length; i++) {
-				if (lowerCaseText[i].contains(s.getFirst())) {
-					spamCount++;
+			for (final String t : lowerCaseText) {
+				if (t.equals(s.getFirst())) {
+					spamCount = spamCount + s.getSecond();
 				}
-
 			}
 		}
-		if (spamCount % 2 == 0) {
-			spamCount = spamCount / 2;
-		} else {
-			spamCount = (spamCount / 2) + 1;
-		}
-		final Double umbral = (double) spamCount / lowerCaseText.length;
+		System.out.println(spamCount);
 
-		return umbral > this.spamThreshold;
+		final Double umbral = spamCount / lowerCaseText.length;
+
+		return umbral >= this.spamThreshold;
 
 	}
 }

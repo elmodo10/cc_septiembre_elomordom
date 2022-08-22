@@ -12,5 +12,21 @@ chef.cookingItem.form.label.description= Description
 chef.cookingItem.form.label.link= Link
 chef.cookingItem.form.label.retailPrice= Retail price
 chef.cookingItem.form.label.type = Type
+chef.cookingItem.form.label.status=Status
+
+chef.cookingItem.form.label.ingredient=Ingredient
+chef.cookingItem.form.label.kitchen-utensil= Kitchen Utensil
+
+chef.cookingItem.list.button.create= Create Cooking Item
+chef.cookingItem.form.button.create= Create!
 
 chef.cookingItem.form.buttom.items= Items
+
+chef.cookingItem.form.button.delete= Delete
+chef.cookingItem.form.button.update= Update
+chef.cookingItem.form.button.publish= Publish
+chef.cookingItem.name.isSpam= Spam detected! 
+chef.cookingItem.description.isSpam= Spam detected! 
+chef.cookingItem.link.isSpam=Spam detected! 
+chef.precioMinimo= Price greater than zero
+chef.precioMinimo.kitchen= Price greater than or equal to zero

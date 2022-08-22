@@ -15,6 +15,7 @@ public class ChefCookingItemShowService implements AbstractShowService<Chef, Coo
 
 	@Autowired
 	protected ChefCookingItemRepository repository;
+	
 
 
 	@Override
@@ -40,7 +41,7 @@ public class ChefCookingItemShowService implements AbstractShowService<Chef, Coo
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "description", "retailPrice", "link", "type");
+		request.unbind(entity, model, "name", "code", "description", "retailPrice", "link", "status","type");
 
 	}
 

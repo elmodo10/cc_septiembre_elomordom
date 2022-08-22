@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.cookingItem.CookingItem;
 import acme.framework.repositories.AbstractRepository;
+import acme.roles.Chef;
 
 @Repository
 public interface ChefCookingItemRepository extends AbstractRepository{
@@ -20,5 +21,13 @@ public interface ChefCookingItemRepository extends AbstractRepository{
 	@Query("select i from CookingItem i where i.id = :id")
 	CookingItem findCookingItemById(int id);
 	
+	@Query(value="select i from Chef i where i.userAccount.id = :id")
+	Chef findChefByUserAccountId(int id);
+	
+	@Query("select i from CookingItem i WHERE i.code = :code")
+	CookingItem findCookingItemByCode(String code);
+	
+	@Query("select i from CookingItem i where i.id = :id")
+	CookingItem findOneCookingItemById(int id);
 
 }
