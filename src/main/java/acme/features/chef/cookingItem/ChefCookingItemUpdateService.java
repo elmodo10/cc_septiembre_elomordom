@@ -1,8 +1,11 @@
 package acme.features.chef.cookingItem;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.Configuration;
 import acme.entities.cookingItem.CookingItem;
 import acme.features.administrator.configurations.AdministratorConfigurationRepository;
 import acme.framework.components.models.Model;
@@ -63,6 +66,21 @@ public class ChefCookingItemUpdateService implements AbstractUpdateService<Chef,
 	public void validate(final Request<CookingItem> request, final CookingItem entity, final Errors errors) {
 		assert request != null;
 		
+		final Collection<Configuration> config = this.configurationRepository.findConfigurations();
+		
+		for(final Configuration c : config) {
+
+	
+			errors.state(request, !c.isSpam(entity.getName()), "name", "chef.cookingItem.name.isSpam");
+			errors.state(request, !c.isSpam(entity.getDescription()), "description", "chef.cookingItem.description.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "chef.cookingItem.link.isSpam");
+		}
+		
+		if(entity.getType() == acme.entities.cookingItem.CookingItemType.INGREDIENT) {
+			errors.state(request, entity.getRetailPrice().getAmount() > 0.00, "retailPrice", "chef.precioMinimo");
+		} else {
+			errors.state(request, entity.getRetailPrice().getAmount() >= 0.00, "retailPrice", "chef.precioMinimo.kitchen");
+		}
 
 	}
 	

@@ -1,8 +1,14 @@
 package acme.features.chef.cookingItem;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.Configuration;
 import acme.entities.cookingItem.CookingItem;
 import acme.entities.cookingItem.CookingItemType;
 import acme.entities.cookingItem.Status;
@@ -62,7 +68,7 @@ public class ChefCookingItemCreateService implements AbstractCreateService<Chef,
 		money.setAmount(0.00);
 			
 		result.setName("");
-		result.setCode("");
+		result.setCode(this.generateCode());
 		result.setDescription("");
 		result.setRetailPrice(money);
 		result.setLink("");
@@ -73,14 +79,47 @@ public class ChefCookingItemCreateService implements AbstractCreateService<Chef,
 		return result;
 	}
 	
-//	private String generateCode() {
-//	}
+	private String generateCode() {
+		String code = "";
+		final List<String> alphabet = Arrays.asList("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+		
+		for(int i=0; i<2; i++) {
+			code += alphabet.get(ThreadLocalRandom.current().nextInt(0, alphabet.size()));
+		}
+		code += ":";
+		for(int i=0; i<3; i++) {
+			code += alphabet.get(ThreadLocalRandom.current().nextInt(0, alphabet.size()));
+		}
+		code += "-";
+		for(int i=0; i<3; i++) {
+		code += Integer.toString(ThreadLocalRandom.current().nextInt(0, 9));
+		}
+		return code;
+	}
 	
 	@Override
 	public void validate(final Request<CookingItem> request, final CookingItem entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		final Collection<Configuration> config = this.configurationRepository.findConfigurations();
+		
+		errors.state(request, this.repository.findCookingItemByCode(entity.getCode()) == null, "code", "inventor.toolkit.title.codeNotUnique");
+		
+		for(final Configuration c : config) {
+
+	
+			errors.state(request, !c.isSpam(entity.getName()), "name", "chef.cookingItem.name.isSpam");
+			errors.state(request, !c.isSpam(entity.getDescription()), "description", "chef.cookingItem.description.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "chef.cookingItem.link.isSpam");
+		}
+		
+		if(entity.getType() == acme.entities.cookingItem.CookingItemType.INGREDIENT) {
+			errors.state(request, entity.getRetailPrice().getAmount() > 0.00, "retailPrice", "chef.precioMinimo");
+		} else {
+			errors.state(request, entity.getRetailPrice().getAmount() >= 0.00, "retailPrice", "chef.precioMinimo.kitchen");
+		}
 
 		
 	}

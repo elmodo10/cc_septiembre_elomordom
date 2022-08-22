@@ -27,7 +27,7 @@
 
 			<jstl:when test="${command == 'create'}">
 			<acme:input-textbox code="chef.cookingItem.form.label.name" path="name"/>
-			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code"/>
+			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code" readonly="true"  />
 			<acme:input-textbox code="chef.cookingItem.form.label.description" path="description"/>
 			<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" />
 			<acme:input-textbox code="chef.cookingItem.form.label.link" path="link"/>
@@ -40,7 +40,7 @@
 		
 				<jstl:when test="${command == 'update'}">
 			<acme:input-textbox code="chef.cookingItem.form.label.name" path="name"/>
-			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code"/>
+			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code"  readonly="true"/>
 			<acme:input-textbox code="chef.cookingItem.form.label.description" path="description"/>
 			<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" />
 			<acme:input-textbox code="chef.cookingItem.form.label.link" path="link"/>

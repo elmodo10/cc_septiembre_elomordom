@@ -15,6 +15,7 @@ public class ChefCookingItemShowService implements AbstractShowService<Chef, Coo
 
 	@Autowired
 	protected ChefCookingItemRepository repository;
+	
 
 
 	@Override
