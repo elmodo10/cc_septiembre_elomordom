@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.FineDish;
+import acme.enums.PublishedStatus;
+import acme.features.administrator.configurations.AdministratorConfigurationRepository;
+import acme.forms.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -18,6 +21,9 @@ public class ChefFineDishShowService implements AbstractShowService<Chef, FineDi
 	@Autowired
 	protected ChefFineDishRepository repository;
 	
+	@Autowired
+	protected AdministratorConfigurationRepository configRepository;
+	
 	@Override
 	public boolean authorise(final Request<FineDish> request) {
 		assert request != null;
@@ -25,7 +31,7 @@ public class ChefFineDishShowService implements AbstractShowService<Chef, FineDi
 		final int inventorId = request.getPrincipal().getActiveRoleId();
 		final int patronageId = request.getModel().getInteger("id");
 		
-		final List<FineDish> patronages = this.repository.findFineDishByChefId(inventorId);
+		final List<FineDish> patronages = this.repository.findFineDishByChefId(inventorId,PublishedStatus.PUBLISHED);
 		final FineDish requested = this.repository.findById(patronageId);
 
 		return patronages.contains(requested);
@@ -48,6 +54,9 @@ public class ChefFineDishShowService implements AbstractShowService<Chef, FineDi
 		assert entity != null;
 		assert model != null;
 		
+		final String defaultCurrency = this.configRepository.getDefaultCurrency();
+		final MoneyExchange me = new MoneyExchange(entity.getBudget(), defaultCurrency);
+		model.setAttribute("moneyExchange", me.getExchange());
 		request.unbind(entity, model, "status", "code", "request", "budget", "startsAt", "finishesAt", "link", "epicure.organisation", "epicure.assertion","epicure.link");
 		
 		

@@ -44,6 +44,7 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		request.bind(entity, errors, "spamWords","spamThreshold", "defaultCurr", "acceptedCurr");
 	}
 
 	@Override
@@ -51,6 +52,8 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		request.unbind(entity, model, "spamWords","spamThreshold", "defaultCurr", "acceptedCurr");
 	}
 
 	@Override
@@ -66,12 +69,13 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		errors.state(request, entity.getAcceptedCurr().contains(entity.getDefaultCurr()), "defaultCurr", "authenticated.administrator.fallo");
 	}
 
 	@Override
 	public void update(final Request<Configuration> request, final Configuration entity) {
-		assert request != null;
-		assert entity != null;
+		
 
 		this.repository.save(entity);
 		

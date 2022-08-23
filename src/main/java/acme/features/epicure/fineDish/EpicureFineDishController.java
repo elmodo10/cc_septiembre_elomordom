@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.fineDish.FineDish;
+
 import acme.framework.controllers.AbstractController;
 import acme.roles.Epicure;
 
@@ -22,8 +23,22 @@ public class EpicureFineDishController extends AbstractController<Epicure, FineD
 	protected EpicureFineDishListService	listService;
 
 
+	
 	@Autowired
 	protected EpicureFineDishShowService	showService;
+	
+	@Autowired
+	protected EpicureFineDishCreateService	createService;
+	
+	@Autowired
+	protected EpicureFineDishDeleteService	deleteService;
+	
+	@Autowired
+	protected EpicureFineDishUpdateService	updateService;
+	
+	
+	@Autowired
+	protected EpicureFineDishPublishService	publishService;
 
 	
 
@@ -34,6 +49,10 @@ public class EpicureFineDishController extends AbstractController<Epicure, FineD
 	protected void initialise() {
 		super.addCommand("list-mine", "list", this.listService);
 		super.addCommand("show", this.showService);
+		super.addCommand("create", this.createService);
+		super.addCommand("delete", this.deleteService);
+		super.addCommand("update", this.updateService);
+		super.addCommand("publish","update", this.publishService);
 	}
 	
 }

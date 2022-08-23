@@ -6,7 +6,7 @@
 <acme:list>
 	<acme:list-column code="administrator.configuration.list.label.SpamWords" path="spamWords" />
 	<acme:list-column code="administrator.configuration.list.label.SpamThreshold" path="spamThreshold" />
-		<acme:list-column code="administrator.configuration.list.label.defaultCurr" path="defaultCurr" />
+	<acme:list-column code="administrator.configuration.list.label.defaultCurr" path="defaultCurr" />
 	<acme:list-column code="administrator.configuration.list.label.acceptedCurr" path="acceptedCurr" />
 
 
