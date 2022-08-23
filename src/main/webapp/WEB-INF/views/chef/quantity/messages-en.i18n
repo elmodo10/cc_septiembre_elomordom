@@ -1,0 +1,34 @@
+chef.quantity.list.label.number = Quantity
+chef.quantity.list.label.name = Name
+chef.quantity.list.label.code = Code
+chef.quantity.list.label.retailPrice = Retail Price
+chef.quantity.list.label.status = Status
+
+chef.quantity.form.label.number = Number 
+chef.quantity.form.label.name = Name
+chef.quantity.form.label.code = Code
+chef.quantity.form.label.description = Description
+chef.quantity.form.label.retailPrice = Retail Price
+chef.quantity.form.label.link = Link
+chef.quantity.form.label.status = Status
+chef.quantity.form.label.type = Type
+
+chef.quantity.form.label.item = Cooking Item
+
+chef.recipe.form.button.quantity = Add Items
+chef.quantity.form.button.create = Add
+
+chef.quantity.recipe.noPublished = This item hasnt been published 
+chef.quantity.number.kitchen = You only can add 1 instance of one kitchen
+chef.quantity.recipe.noPublished = You cant add items to this recipe(This recipe has been published yet)
+chef.quantity.item.status = You cant update a published item
+
+chef.quantity.Spam= Spam detected!
+
+
+chef.quantity.cookingitem.exist = This item exist on the recipeyet
+
+chef.quantity.form.button.update = Update number of items
+
+chef.quantity.form.button.updateItem = Update owned item
+
