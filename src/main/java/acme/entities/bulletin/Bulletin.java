@@ -39,6 +39,7 @@ public class Bulletin extends AbstractEntity {
 	@Length(min = 1,max = 255)
 	protected String pieceOfText;
 	
+	
 	protected boolean critic;
 
 	@URL
