@@ -18,3 +18,6 @@ chef.fineDish.list.label.fineDish.identify.budget = Budget
 chef.fineDish.list.label.fineDish.identify.startsAt = Start date
 chef.fineDish.list.label.fineDish.identify.finishesAt = Finish date
 chef.fineDish.list.label.fineDish.identify.link = Link
+
+chef.memorandum.form.label.confirm = Confirm
+chef.memorandum.form.button.create = Create new one
