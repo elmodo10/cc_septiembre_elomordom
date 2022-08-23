@@ -12,3 +12,10 @@ chef.finedish.form.label.link = Link
 chef.finedish.form.label.epicureorganisation = Organización del sibarita
 chef.finedish.form.label.epicureassertion = Afirmacion del sibarita
 chef.finedish.form.buttom.memorandum = Memorandum
+
+authenticated.epicure.finedish.form.button.accepted = Aceptar buen plato
+authenticated.epicure.finedish.form.button.denied = Denegar buen plato
+
+chef.memorandum.form.accept.error = Debe confirmar la creación
+
+chef.memorandum.form.button.create = Crear nuevo memorandum

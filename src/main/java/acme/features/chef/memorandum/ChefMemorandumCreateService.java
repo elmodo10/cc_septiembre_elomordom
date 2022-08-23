@@ -66,7 +66,7 @@ public class ChefMemorandumCreateService implements AbstractCreateService<Chef, 
 		code.add(patronageCode);
 		code.add(String.format("%04d" , this.repository.findMemorandum().size()+1));
 		
-		return String.join("-", code);
+		return String.join(":", code);
 	}
 	
 	@Override

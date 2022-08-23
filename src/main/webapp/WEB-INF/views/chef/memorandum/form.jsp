@@ -34,7 +34,7 @@
 	<acme:input-textarea  code="chef.memorandum.form.label.report" path="report"/>
 	<acme:input-url code="chef.memorandum.form.label.link" path="link"/>
 	<acme:input-checkbox code="chef.memorandum.form.label.confirm" path="confirm"/>
-	<acme:submit code="chef.memorandum.form.button.create" action="/inventor/memorandum/create"/>
+	<acme:submit code="chef.memorandum.form.button.create" action="/chef/memorandum/create"/>
 	</jstl:when>
 </jstl:choose>
 

@@ -18,4 +18,8 @@
 	<acme:input-textbox code="chef.finedish.form.label.epicureassertion" path="epicure.assertion" readonly="true"/>
 	<acme:button code="chef.finedish.form.buttom.memorandum" action="/chef/memorandum/list-by-fineDish?id=${id}"/>
 	
+	
+	<acme:button code="chef.memorandum.form.button.create" action="/chef/memorandum/create?id=${id}"/>
+	
+	
 </acme:form>
