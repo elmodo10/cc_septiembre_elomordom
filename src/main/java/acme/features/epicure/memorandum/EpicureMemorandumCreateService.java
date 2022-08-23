@@ -1,4 +1,4 @@
-package acme.features.chef.memorandum;
+package acme.features.epicure.memorandum;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,12 +14,13 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Chef;
+import acme.roles.Epicure;
 
 @Service
-public class ChefMemorandumCreateService implements AbstractCreateService<Chef, Memorandum> {
+public class EpicureMemorandumCreateService implements AbstractCreateService<Epicure, Memorandum> {
 
 	@Autowired
-	protected ChefMemorandumRepository repository;
+	protected EpicureMemorandumRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Memorandum> request) {
@@ -31,7 +32,7 @@ public class ChefMemorandumCreateService implements AbstractCreateService<Chef, 
 
 		fineDishId = request.getModel().getInteger("id");
 		fineDish = this.repository.findFineDishById(fineDishId);
-		result = request.getPrincipal().getActiveRoleId() == fineDish.getChef().getId();
+		result = request.getPrincipal().getActiveRoleId() == fineDish.getEpicure().getId();
 
 		return result;
 	}

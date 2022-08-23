@@ -22,15 +22,16 @@
 			<acme:input-url readonly="true" code="authenticated.epicure.finedish.form.label.chef.link" path="chef.link"/>
 
 			
+			
 			<jstl:if test="${publishedStatus == 'NONE_PUBLISHED' }">
 				<acme:button code="authenticated.epicure.finedish.form.button.update" action="/epicure/fine-dish/update?id=${id}"/>
 				<acme:submit code="authenticated.epicure.finedish.form.button.delete" action="/epicure/fine-dish/delete?id=${id}"/>
 				<acme:submit code="authenticated.epicure.finedish.form.button.publish" action="/epicure/fine-dish/publish"/>
 			</jstl:if>
 			
-			<acme:button code="epicure.finedish.form.buttom.memorandums" action="/epicure/memorendum/list-by-finedish?id=${id}"/>
+			<acme:button code="epicure.finedish.form.buttom.memorandums" action="/epicure/memorandum/list-by-fineDish?id=${id}"/>
 			
-			
+			<acme:button code="epicure.memorandum.form.button.create" action="/epicure/memorandum/create?id=${id}"/>
 			
 		</jstl:when>
 		<jstl:when test="${command == 'create'}">
