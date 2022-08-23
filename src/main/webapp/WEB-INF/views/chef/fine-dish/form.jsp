@@ -23,4 +23,8 @@
 		<acme:submit code="authenticated.epicure.finedish.form.button.denied" action="/chef/fine-dish/denied"/>	
 	</jstl:if>
 	
+	
+	<acme:button code="chef.memorandum.form.button.create" action="/chef/memorandum/create?id=${id}"/>
+	
+	
 </acme:form>
