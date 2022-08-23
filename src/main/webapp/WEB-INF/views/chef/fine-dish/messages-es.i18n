@@ -12,3 +12,7 @@ chef.finedish.form.label.link = Link
 chef.finedish.form.label.epicureorganisation = Organización del sibarita
 chef.finedish.form.label.epicureassertion = Afirmacion del sibarita
 chef.finedish.form.buttom.memorandum = Memorandum
+epicure.label.moneyExchange = Presupuesto en la divisa del sistema
+authenticated.epicure.finedish.form.button.accepted = Aceptar buen plato
+authenticated.epicure.finedish.form.button.denied = Denegar buen plato
+				
