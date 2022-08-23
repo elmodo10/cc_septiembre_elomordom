@@ -1,27 +1,27 @@
-package acme.features.epicure.fineDish;
+package acme.features.chef.fineDish;
+
 
 import java.util.Collection;
-import java.util.Date;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.FineDish;
+
+import acme.enums.Status;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
-import acme.roles.Epicure;
+import acme.roles.Chef;
+
 
 
 @Service
-public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicure, FineDish> {
+public class ChefFineDishDeniedService implements AbstractUpdateService<Chef, FineDish> {
 
-	
-	
 	@Autowired
-	protected EpicureFineDishRepository repository;
+	protected ChefFineDishRepository repository;
 	
 	
 	@Override
@@ -29,7 +29,7 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert request != null;
 
 		final int id = request.getPrincipal().getActiveRoleId();
-		final Collection<FineDish> finedishs = this.repository.findAllFineDishByEpicureId(id);
+		final Collection<FineDish> finedishs = this.repository.findAllFineDishByChefId(id);
 		final int finedish_id = request.getModel().getInteger("id");
 		final FineDish finedish = this.repository.findFineDishById(finedish_id);
 		return finedishs.contains(finedish);
@@ -41,9 +41,7 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert entity != null;
 		assert errors != null;
 		
-		
-		entity.setChef(this.repository.findChefByUsername(request.getModel().getString("chefUN")));
-		request.bind(entity, errors, "code", "request", "budget", "startsAt", "finishesAt","link");
+		request.bind(entity, errors);
 	}
 
 	@Override
@@ -51,34 +49,14 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		model.setAttribute("chefs", this.repository.findChefs());
-		
-		
-		request.unbind(entity, model, "status","code", "request", "budget", "startsAt", "finishesAt","link");
-		
+
+		request.unbind(entity, model);
 	}
 
 	
 	@Override
 	public void validate(final Request<FineDish> request, final FineDish entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
 		
-		final FineDish finedish = this.repository.findFineDishByCode(entity.getCode());
-		
-		if(finedish != null) {
-			errors.state(request, finedish.getId() == entity.getId(), "code", "chef.item.title.codeNotUnique");
-		}
-		
-		errors.state(request, entity.getBudget().getAmount() > 0.00, "budget", "authenticated.epicure.finedish.list.label.priceGreatherZero");
-		
-
-		final Date minimumStartAt= DateUtils.addMonths(entity.getCreationTime(),1);
-		errors.state(request,entity.getStartsAt().after(minimumStartAt), "startsAt", "epicure.finedish.error.minimumStartAt");
-		
-		final Date minimumFinishesAt=DateUtils.addMonths(entity.getStartsAt(), 1);
-		errors.state(request,entity.getFinishesAt().after(minimumFinishesAt), "finishesAt", "epicure.finedish.error.minimumFinishesAt");
 	}
 
 	
@@ -99,7 +77,11 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 	@Override
 	public void update(final Request<FineDish> request, final FineDish entity) {
 		// TODO Auto-generated method stub
+		entity.setStatus(Status.denied);
 		this.repository.save(entity);
 	}
+
+	
+	
 
 }

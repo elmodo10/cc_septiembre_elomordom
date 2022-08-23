@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.FineDish;
+import acme.enums.PublishedStatus;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
@@ -33,7 +34,7 @@ public class ChefFineDishListOwnService implements AbstractListService<Chef, Fin
 			final int id;
 
 			id = request.getPrincipal().getActiveRoleId();
-			result = this.repository.findFineDishByChefId(id);
+			result = this.repository.findFineDishByChefId(id,PublishedStatus.PUBLISHED);
 
 			return result;
 		}

@@ -16,6 +16,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.enums.PublishedStatus;
 import acme.enums.Status;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
@@ -45,6 +46,8 @@ public class FineDish extends AbstractEntity {
 	@NotNull
 	protected Money budget;
 	
+	@NotNull
+	protected PublishedStatus publishedStatus;
 	
 	
 	@Temporal(TemporalType.TIMESTAMP)
