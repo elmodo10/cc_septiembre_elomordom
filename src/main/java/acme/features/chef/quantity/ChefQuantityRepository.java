@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.cookingItem.CookingItem;
+import acme.entities.cookingItem.CookingItemType;
 import acme.entities.quantity.Quantity;
 import acme.entities.recipe.Recipe;
 import acme.framework.repositories.AbstractRepository;
@@ -22,8 +23,8 @@ public interface ChefQuantityRepository extends AbstractRepository{
 	@Query("select i from Chef i where i.userAccount.id = :id")
 	Chef findChefByUserId(int id);
 	
-	@Query("select i from CookingItem i")
-	List<CookingItem> findManyCookingItem();
+	@Query("select i from CookingItem i where i.type = :tipo")
+	List<CookingItem> findManyCookingItem(CookingItemType tipo);
 	
 	@Query("select i from CookingItem i where i.id = :id")
 	CookingItem findOneCookingItemById(int id);

@@ -13,7 +13,10 @@ import acme.roles.Chef;
 public class ChefQuantiyController extends AbstractController<Chef, Quantity> {
 	
 	@Autowired
-	protected ChefQuantityCreateService createService;
+	protected ChefQuantityCreateIngredientService createIngredientService;
+	
+	@Autowired
+	protected ChefQuantityCreateKitchenUtensilService createKitchenUtensilService;
 	
 	@Autowired
 	protected ChefQuantityListService listService;
@@ -27,7 +30,8 @@ public class ChefQuantiyController extends AbstractController<Chef, Quantity> {
 	@PostConstruct
 	protected void initialise() {
 		
-		super.addCommand("create", this.createService);
+		super.addCommand("createIngredient","create", this.createIngredientService);
+		super.addCommand("createKitchenUtensil","create", this.createKitchenUtensilService);
 		super.addCommand("list-by-recipe",  "list", this.listService);
 		super.addCommand("show", this.showService);
 		super.addCommand("update", this.updateService);

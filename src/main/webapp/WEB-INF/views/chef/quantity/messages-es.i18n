@@ -1,43 +1,48 @@
-inventor.quantity.list.label.number = Cantidad
-inventor.quantity.list.label.name = Nombre
-inventor.quantity.list.label.code = Código
-inventor.quantity.list.label.retailPrice = Precio
-inventor.quantity.list.label.status = Estado
+chef.quantity.list.label.number = Quantity
+chef.quantity.list.label.name = Nombre
+chef.quantity.list.label.code = Codigo
+chef.quantity.list.label.retailPrice = Precio
+chef.quantity.list.label.status = Estado
 
-inventor.quantity.form.label.number = Cantidad 
-inventor.quantity.form.label.name = Nombre
-inventor.quantity.form.label.code = Código
-inventor.quantity.form.label.technology = Tecnología
-inventor.quantity.form.label.description = Descripción
-inventor.quantity.form.label.retailPrice = Precio
-inventor.quantity.form.label.link = Enlace
-inventor.quantity.form.label.status = Estado
-inventor.quantity.form.label.type = Tipo
+chef.quantity.form.label.number = Número 
+chef.quantity.form.label.name = Nombre
+chef.quantity.form.label.code = Codigo
+chef.quantity.form.label.description = Descripción
+chef.quantity.form.label.retailPrice = Precio
+chef.quantity.form.label.link = Link
+chef.quantity.form.label.status = Estado
+chef.quantity.form.label.type = Tipo
+chef.quantity.form.label.amount= Cantidad
 
-inventor.quantity.form.label.item = Item
+chef.quantity.form.label.item = Artículo de cocina
 
-inventor.toolkit.form.button.quantity = Añadir Items
-inventor.quantity.form.button.create = Añadir
+chef.recipe.form.button.quantity.ingredient = Añade Ingredientes
+chef.recipe.form.button.quantity.utensil= Añade Utensilios de cocina
+chef.quantity.form.button.create = Add
+
+chef.quantity.recipe.noPublished = Este artículo no ha sido publicado.
+chef.quantity.number.ingredient = You only can add 1 instance of one particular ingredient
+chef.quantity.recipe.noPublished = 
+Solo puede agregar 1 instancia de un ingrediente en particular
+chef.quantity.item.status = No puedes actualizar un elemento publicado
+
+chef.quantity.Spam= Spam detectado!
 
 
-inventor.quantity.item.noPublished = Este item aún no ha sido publicado
-inventor.quantity.number.tool = Solo puedes añadir una instancia de cada herramienta
-inventor.quantity.item.status = No puedes modificar un item que ha sido publicado
+chef.quantity.cookingitem.exist = Este artículo ya existe en la receta.
 
-inventor.quantity.item.code.strongSpam = Contiene spam fuerte
-inventor.quantity.item.description.strongSpam = Contiene spam fuerte
-inventor.quantity.item.link.strongSpam = Contiene spam fuerte
-inventor.quantity.item.name.strongSpam = Contiene spam fuerte
-inventor.quantity.item.technology.strongSpam = Contiene spam fuerte
+chef.quantity.form.button.update = Actualizar número de artículos de cocina
 
-inventor.quantity.item.code.weakSpam = Contiene spam débil
-inventor.quantity.item.description.weakSpam = Contiene spam débil
-inventor.quantity.item.link.weakSpam = Contiene spam débil
-inventor.quantity.item.name.weakSpam = Contiene spam débil
-inventor.quantity.item.technology.weakSpam = Contiene spam débil
+chef.quantity.form.button.updateItem = Actualiza artículo de cocina propio
 
-inventor.quantity.item.exist = Este item ya forma parte de la toolkit
+chef.cookingitem.minPrice= Precio debe ser mayor que cero
 
-inventor.quantity.form.button.update = Actualizar cantidad
+chef.quantity.form.label.gram= Gramo
+chef.quantity.form.label.kilo = Kilo
+chef.quantity.form.label.cm3 =Cm3
+chef.quantity.form.label.gallon = Galón
+chef.quantity.form.label.spoon = Cucharada
 
-inventor.quantity.form.button.updateItem = Actualizar item en propiedad
+chef.quantity.form.label.vacio= Elige una cantidad
+
+

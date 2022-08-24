@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.configuration.Configuration;
 import acme.entities.cookingItem.CookingItem;
-import acme.entities.cookingItem.CookingItemType;
 import acme.entities.quantity.Quantity;
 import acme.features.administrator.configurations.AdministratorConfigurationRepository;
 import acme.framework.components.models.Model;
@@ -70,7 +69,7 @@ public class ChefQuantityUpdateService implements AbstractUpdateService<Chef, Qu
 		assert errors != null;
 		
 		final CookingItem i = entity.getCookingitem();
-		errors.state(request, !(i.getType() == CookingItemType.KITCHEN_UTENSIL && entity.getNumber() > 1), "number", "chef.quantity.number.kitchen");
+		
 		errors.state(request, !(entity.getRecipe().getStatus().toString().equals("PUBLISHED")), "number", "chef.quantity.recipe.noPublished");
 
 		
@@ -84,9 +83,8 @@ public class ChefQuantityUpdateService implements AbstractUpdateService<Chef, Qu
 			
 		}
 		
-		final CookingItem item = this.repository.findCookingItemByCode(entity.getCookingitem().getCode());
 		
-		errors.state(request, entity.getCookingitem().getRetailPrice().getAmount() >= 0.00, "item.retailPrice", "inventor.item.title.minPrice");
+		errors.state(request, entity.getCookingitem().getRetailPrice().getAmount() >= 0.00, "item.retailPrice", "chef.cookingitem.minPrice");
 		
 	}
 

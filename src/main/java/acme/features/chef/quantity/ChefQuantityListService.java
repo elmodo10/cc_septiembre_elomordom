@@ -53,7 +53,7 @@ public class ChefQuantityListService implements AbstractListService<Chef, Quanti
 		model.setAttribute("tStatus", t.getStatus());
 		
 		
-		request.unbind(entity, model, "number", "cookingitem.name", "cookingitem.code", "cookingitem.retailPrice", "cookingitem.status");
+		request.unbind(entity, model, "number", "cookingitem.name", "cookingitem.code", "cookingitem.retailPrice", "cookingitem.status","cookingitem.type");
 		
 		
 		

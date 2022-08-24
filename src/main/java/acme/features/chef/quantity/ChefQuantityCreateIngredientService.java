@@ -12,6 +12,7 @@ import acme.entities.cookingItem.CookingItem;
 import acme.entities.cookingItem.CookingItemType;
 import acme.entities.quantity.Quantity;
 import acme.entities.recipe.Recipe;
+import acme.features.administrator.configurations.AdministratorConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -19,10 +20,13 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Chef;
 
 @Service
-public class ChefQuantityCreateService implements AbstractCreateService<Chef, Quantity> {
+public class ChefQuantityCreateIngredientService implements AbstractCreateService<Chef, Quantity> {
 
 	@Autowired
 	protected ChefQuantityRepository repository;
+	
+	@Autowired
+	protected AdministratorConfigurationRepository confRepository;
 
 
 	@Override
@@ -43,7 +47,7 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 		assert errors != null;
 
 		entity.setCookingitem(this.repository.findOneCookingItemById(Integer.valueOf(request.getModel().getAttribute("cookingitem").toString())));
-		request.bind(entity, errors, "number");
+		request.bind(entity, errors, "number", "amount");
 
 	}
 
@@ -53,10 +57,11 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 		assert entity != null;
 		assert model != null;
 
-		final List<CookingItem> items = this.repository.findManyCookingItem();
+		final List<CookingItem> items = this.repository.findManyCookingItem(CookingItemType.INGREDIENT);
 		model.setAttribute("cookingitems", items);
+		
 
-		request.unbind(entity, model, "number");
+		request.unbind(entity, model, "number" , "amount");
 
 	}
 
@@ -77,8 +82,7 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 		assert entity != null;
 		assert errors != null;
 
-		final CookingItem i = entity.getCookingitem();
-		errors.state(request, !(i.getType() == CookingItemType.KITCHEN_UTENSIL && entity.getNumber() > 1), "number", "chef.quantity.number.kitchen");
+	
 		errors.state(request, !(entity.getRecipe().getStatus().toString().equals("PUBLISHED")), "number", "chef.quantity.recipe.noPublished");
 
 		final Collection<Quantity> items = this.repository.findQuantityByRecipeId(entity.getRecipe().getId());
@@ -86,6 +90,7 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 		for (final Quantity q : items) {
 			aux.add(q.getCookingitem());
 		}
+
 		errors.state(request, !aux.contains(entity.getCookingitem()), "number", "chef.quantity.cookingitem.exist");
 
 	}
