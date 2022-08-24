@@ -20,10 +20,12 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.user-account" action="/any/user-account/list-enabled"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-separator/>
+			
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-elomordom" action="https://youtube.com"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-josgarqui" action="https://sevillafc.es"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-juamenvar" action="https://www.netflix.com"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.list-ingredient" action="/any/cooking-item/list-ingredient"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-kitchenUtensil" action="/any/cooking-item/list-kitchenUtensil"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-recipe" action="/any/recipe/list-published"/>
@@ -41,6 +43,10 @@
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.configurations" action="/administrator/configuration/list"/>
+			
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.bulletin" action="/administrator/bulletin/list"/>
+			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
@@ -48,6 +54,7 @@
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+			
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
