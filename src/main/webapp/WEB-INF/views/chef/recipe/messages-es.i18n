@@ -13,3 +13,7 @@ chef.recipe.form.label.status = Status
 
 
 chef.recipe.form.buttom.items = Cooking Items
+chef.recipe.form.button.create=Crear
+chef.recipe.create= Crea tu receta!
+chef.recipe.code.codeNotUnique= Código único por favor!
+chef.recipe.isSpam= Spam detectado! 

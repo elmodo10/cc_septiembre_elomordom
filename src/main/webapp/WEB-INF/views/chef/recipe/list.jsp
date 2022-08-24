@@ -12,4 +12,4 @@
 
 </acme:list>
 
-	
+<acme:button code="chef.recipe.create" action="/chef/recipe/create"/>		

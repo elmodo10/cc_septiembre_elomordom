@@ -48,7 +48,7 @@ public class ChefRecipeShowService implements AbstractShowService<Chef, Recipe> 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "heading", "description", "preparationNotes", "link");
+		request.unbind(entity, model, "code", "heading", "description", "preparationNotes", "link","status");
 
 	}
 }

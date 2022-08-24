@@ -60,7 +60,7 @@ public class Configuration extends AbstractEntity {
 				}
 			}
 		}
-		System.out.println(spamCount);
+		
 
 		final Double umbral = spamCount / lowerCaseText.length;
 
