@@ -7,7 +7,7 @@ administrator.bulletin.list.label.pieceOfText = Body
 administrator.bulletin.form.label.heading = Heading
 administrator.bulletin.form.label.instationMoment = Moment of creation
 administrator.bulletin.form.label.link = Link
-administrator.bulletin.form.label.critic = Is critic
+administrator.bulletin.form.label.critic = Is critical?
 administrator.bulletin.form.label.pieceOfText = Body
 
 
@@ -19,3 +19,4 @@ administrator.bulletin.form.label.false = False
 administrator.bulletin.form.label.true = True
 
 administrator.announcement.accept.error = You must confirm the creation
+

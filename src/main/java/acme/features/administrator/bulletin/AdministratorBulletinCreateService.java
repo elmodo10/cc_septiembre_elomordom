@@ -43,13 +43,12 @@ public class AdministratorBulletinCreateService implements AbstractCreateService
 		assert entity != null;
 		assert errors != null;
 
-		Date creationTime;
-		Calendar calendar;
-		creationTime = new Date();
-		calendar = Calendar.getInstance();
-		creationTime = calendar.getTime();
+		Date ActualMoment;
+
+		ActualMoment = new Date(System.currentTimeMillis() - 1);
+		entity.setInstationMoment(ActualMoment);
 		request.bind(entity, errors, "heading", "pieceOfText", "link" , "critic");
-		entity.setInstationMoment(creationTime);
+		entity.setInstationMoment(ActualMoment);
 
 	}
 
@@ -90,6 +89,11 @@ public class AdministratorBulletinCreateService implements AbstractCreateService
 	public void create(final Request<Bulletin> request, final Bulletin entity) {
 		assert request != null;
 		assert entity != null;
+		
+		Date ActualMoment;
+
+		ActualMoment = new Date(System.currentTimeMillis() - 1);
+		entity.setInstationMoment(ActualMoment);
 
 		this.repository.save(entity);
 	}
