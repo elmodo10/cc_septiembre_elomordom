@@ -1,0 +1,9 @@
+recordIndex,name,code,description,retailPrice,link,type
+0, , ,ingrediente bueno,EUR 10.00,https://google.com,KITCHEN-UTENSIL
+1,Prueba2, ,sex,EUR 10.00,https://google.com,KITCHEN-UTENSIL
+2,Prueba3, , ,EUR 13.00,https://google.com,KITCHEN-UTENSIL
+3,Prueba3, ,ingrediente bueno ,EUR 0.00,https://google.com,KITCHEN-UTENSIL
+4,Prueba3, ,ingrediente bueno ,EUR -1.00,https://google.com,KITCHEN-UTENSIL
+5,Prueba3, ,ingrediente bueno ,EUR 13.00,aeiou,KITCHEN-UTENSIL
+5,sex, ,ingrediente bueno ,EUR 13.00,aeiou,KITCHEN-UTENSIL
+6, Prueba7, ,ingrediente bueno,EUR aa.00,https://google.com,KITCHEN-UTENSIL
