@@ -21,7 +21,7 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Chef;
 
 @Service
-public class ChefCookingItemCreateService implements AbstractCreateService<Chef, CookingItem> {
+public class ChefCookingItemCreateIngredientService implements AbstractCreateService<Chef, CookingItem> {
 	
 	@Autowired 
 	protected ChefCookingItemRepository repository;

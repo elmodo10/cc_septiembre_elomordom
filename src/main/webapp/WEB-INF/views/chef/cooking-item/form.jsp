@@ -25,17 +25,24 @@
 			
 		</jstl:when>
 
-			<jstl:when test="${command == 'create'}">
+			<jstl:when test="${command == 'createIngredient'}">
 			<acme:input-textbox code="chef.cookingItem.form.label.name" path="name"/>
 			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code" readonly="true"  />
 			<acme:input-textbox code="chef.cookingItem.form.label.description" path="description"/>
 			<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" />
 			<acme:input-textbox code="chef.cookingItem.form.label.link" path="link"/>
-			<acme:input-select code="chef.cookingItem.form.label.type" path="type">
-				<acme:input-option code="chef.cookingItem.form.label.ingredient" value="INGREDIENT" selected="${ type == 'INGREDIENT' }"/>
-				<acme:input-option code="chef.cookingItem.form.label.kitchen-utensil" value="KITCHEN_UTENSIL" selected="${ type == 'KITCHEN_UTENSIL' }"/>
-			</acme:input-select>
-			<acme:submit code="chef.cookingItem.form.button.create" action="/chef/cooking-item/create"/>
+			<acme:input-textbox code="chef.cookingItem.form.label.type" path="type" readonly="true"  />
+			<acme:submit code="chef.cookingItem.form.button.createIngredient" action="/chef/cooking-item/createIngredient"/>
+		</jstl:when>
+		
+					<jstl:when test="${command == 'createKitchenUtensil'}">
+			<acme:input-textbox code="chef.cookingItem.form.label.name" path="name"/>
+			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code" readonly="true"  />
+			<acme:input-textbox code="chef.cookingItem.form.label.description" path="description"/>
+			<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" />
+			<acme:input-textbox code="chef.cookingItem.form.label.link" path="link"/>
+			<acme:input-textbox code="chef.cookingItem.form.label.type" path="type" readonly="true"  />
+			<acme:submit code="chef.cookingItem.form.button.createKitchenUtensil" action="/chef/cooking-item/createKitchenUtensil"/>
 		</jstl:when>
 		
 				<jstl:when test="${command == 'update'}">

@@ -20,6 +20,11 @@ chef.cookingItem.form.label.kitchen-utensil= Utensilio de cocina
 chef.cookingItem.list.button.create= Crea Artículo de cocina
 chef.cookingItem.form.button.create= Crealo!
 
+chef.cookingItem.list.button.createIngredient= Crea tu ingredienet
+chef.cookingItem.list.button.createKitchenUtensil= Crea tu utensilio de cocina
+chef.cookingItem.form.button.createIngredient= Crealo este ingrediente
+chef.cookingItem.form.button.createKitchenUtensil= Crealo este utensilio de cocina
+
 chef.cookingItem.form.buttom.items= Items
 
 

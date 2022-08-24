@@ -1,0 +1,9 @@
+recordIndex,name,code,description,retailPrice,link,type
+0, , ,ingrediente bueno,EUR 10.00,https://google.com,INGREDIENT
+1,Prueba2, ,sex,EUR 10.00,https://google.com,INGREDIENT
+2,Prueba3, , ,EUR 13.00,https://google.com,INGREDIENT
+3,Prueba3, ,ingrediente bueno ,EUR 0.00,https://google.com,INGREDIENT
+4,Prueba3, ,ingrediente bueno ,EUR -1.00,https://google.com,INGREDIENT
+5,Prueba3, ,ingrediente bueno ,EUR 13.00,aeiou,INGREDIENT
+5,sex, ,ingrediente bueno ,EUR 13.00,aeiou,INGREDIENT
+6, Prueba7, ,ingrediente bueno,EUR aa.00,https://google.com,INGREDIENT
