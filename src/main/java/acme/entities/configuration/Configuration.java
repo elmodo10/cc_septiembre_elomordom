@@ -47,24 +47,61 @@ public class Configuration extends AbstractEntity {
 		final String[] sp = this.spamWords.split(",");
 
 		for (final String s : sp) {
-
 			final String[] ss = s.split(";");
 			ls.add(Pair.of(ss[0].replace("(", ""), Double.parseDouble(ss[1].replace(")", ""))));
-
 		}
 
+		final List<String> listaIntroduzco = new ArrayList<String>();
+		for (final String i : lowerCaseText) {
+			listaIntroduzco.add(i);
+		}
 		for (final Pair<String, Double> s : ls) {
-			for (final String t : lowerCaseText) {
-				if (t.equals(s.getFirst())) {
-					spamCount = spamCount + s.getSecond();
-				}
-			}
-		}
-		
+				final String[] aa = s.getFirst().split(" ");
 
+				switch (aa.length) {
+				case 1:
+					for (int i = 0; i < listaIntroduzco.size(); i++) {
+						if (listaIntroduzco.get(i).equals(aa[0])) {
+							spamCount = spamCount + s.getSecond();
+						}
+					}
+
+					break;
+				case 2:
+					for (int i = 0; i < listaIntroduzco.size(); i++) {
+						if (listaIntroduzco.get(i).equals(aa[0]) && listaIntroduzco.get(i + 1).equals(aa[1])) {
+							spamCount = spamCount + s.getSecond();
+						}
+					}
+
+					break;
+				case 3:
+
+					for (int i = 0; i < listaIntroduzco.size(); i++) {
+						if (listaIntroduzco.get(i).equals(aa[0]) && listaIntroduzco.get(i + 1).equals(aa[1]) && listaIntroduzco.get(i + 2).equals(aa[1])) {
+							spamCount = spamCount + s.getSecond();
+						}
+					}
+
+					break;
+				case 4:
+					for (int i = 0; i < listaIntroduzco.size(); i++) {
+						if (listaIntroduzco.get(i).equals(aa[0]) && listaIntroduzco.get(i + 1).equals(aa[1]) && listaIntroduzco.get(i + 2).equals(aa[1]) && listaIntroduzco.get(i + 3).equals(aa[1])) {
+							spamCount = spamCount + s.getSecond();
+						}
+					}
+
+					break;
+
+				}
+
+			}
+		
 		final Double umbral = spamCount / lowerCaseText.length;
 
 		return umbral >= this.spamThreshold;
 
+		}
+		
 	}
-}
+
