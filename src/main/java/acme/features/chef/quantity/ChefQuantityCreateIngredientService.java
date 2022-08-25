@@ -90,8 +90,8 @@ public class ChefQuantityCreateIngredientService implements AbstractCreateServic
 		for (final Quantity q : items) {
 			aux.add(q.getCookingitem());
 		}
-
 		errors.state(request, !aux.contains(entity.getCookingitem()), "number", "chef.quantity.cookingitem.exist");
+		
 
 	}
 
