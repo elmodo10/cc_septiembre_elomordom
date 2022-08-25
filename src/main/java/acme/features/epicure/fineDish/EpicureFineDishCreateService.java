@@ -1,6 +1,7 @@
 package acme.features.epicure.fineDish;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -9,9 +10,9 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.Configuration;
 //import acme.entities.configuration.Configuration;
 import acme.entities.fineDish.FineDish;
-
 import acme.enums.PublishedStatus;
 import acme.enums.Status;
 import acme.features.administrator.configurations.AdministratorConfigurationRepository;
@@ -127,14 +128,15 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 		assert errors != null;
 		
 
-		//final Configuration config = this.configurationRepository.findConfiguration();
+		final Collection<Configuration> config = this.configurationRepository.findConfigurations();
+
+		for (final Configuration c : config) {
+			errors.state(request, !c.isSpam(entity.getRequest()), "request", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getCode()), "code", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
 		
-		//final SpamLib spam = new SpamLib(config.getWeakSpamWords(), config.getStrongSpamWords(), config.getWeakSpamThreshold(), config.getStrongSpamThreshold());
-		
-		//errors.state(request, !spam.isSpamStrong(entity.getLegalStuff()), "legalStuff","administrator.announcement.strongspam");
-		//errors.state(request, !spam.isSpamWeak(entity.getLegalStuff()), "legalStuff","administrator.announcement.weakspam");
-		//errors.state(request, !spam.isSpamStrong(entity.getLink()), "link","administrator.announcement.strongspam");
-		//errors.state(request, !spam.isSpamWeak(entity.getLink()), "link","administrator.announcement.weakspam");
+
+		}
 		
     	final FineDish finedish = this.repository.findFineDishByCode(entity.getCode());
 		
@@ -150,11 +152,7 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 		final Date minimumFinishesAt=DateUtils.addMonths(entity.getStartsAt(), 1);
 		errors.state(request,entity.getFinishesAt().after(minimumFinishesAt), "finishesAt", "epicure.finedish.error.minimumFinishesAt");
 		
-//		errors.state(request,!entity.getCode().isEmpty(), "code", "epicure.finedish.error.notnull");
-//		errors.state(request,!(entity.getRequest().isEmpty()), "request", "epicure.finedish.error.notnull");
-//		errors.state(request,!entity.getBudget().equals(null), "budget", "epicure.finedish.error.notnull");
-//		errors.state(request,!entity.getStartsAt().toString().isEmpty(), "startsAt", "epicure.finedish.error.notnull");
-//		errors.state(request,!entity.getFinishesAt().toString().isEmpty(), "finishesAt", "epicure.finedish.error.notnull");
+
 		
 		
 	}

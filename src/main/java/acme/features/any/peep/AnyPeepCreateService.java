@@ -1,12 +1,15 @@
 package acme.features.any.peep;
 
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.Configuration;
 import acme.entities.peep.Peep;
+import acme.features.administrator.configurations.AdministratorConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -18,6 +21,9 @@ public class AnyPeepCreateService implements AbstractCreateService<Any, Peep>{
 	
 	@Autowired
 	protected AnyPeepRepository repository;
+	
+	@Autowired
+	protected AdministratorConfigurationRepository	configurationRepository;
 	
 	@Override
 	public boolean authorise(final Request<Peep> request) {
@@ -57,6 +63,15 @@ public class AnyPeepCreateService implements AbstractCreateService<Any, Peep>{
 		
 		final boolean confirm = request.getModel().getBoolean("confirm");
 		errors.state(request, confirm, "confirm", "any.peep.accept.error");
+		
+		final Collection<Configuration> config = this.configurationRepository.findConfigurations();
+		for(final Configuration c : config) {
+	
+			errors.state(request, !c.isSpam(entity.getHeading()), "heading", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getWriter()), "writer", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getPieceOfText()), "pieceOfText", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getEmail()), "email", "detected.isSpam");
+		}
 
 	}
 	

@@ -24,19 +24,19 @@ public class Configuration extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
-	protected String			spamWords;
+	protected String spamWords;
 
 	@NotNull
 	@Range(min = 0, max = 1)
-	protected Double			spamThreshold;
+	protected Double spamThreshold;
 
 	@NotBlank
 	@Pattern(regexp = "[A-Z]{3}")
-	protected String			defaultCurr;
+	protected String defaultCurr;
 
 	@NotBlank
 	@Pattern(regexp = "([A-Z]{3})(,\\s*[A-Z]{3})*")
-	protected String			acceptedCurr;
+	protected String acceptedCurr;
 
 
 	public boolean isSpam(final String text) {

@@ -1,19 +1,21 @@
 package acme.features.epicure.memorandum;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.Configuration;
 import acme.entities.fineDish.FineDish;
 import acme.entities.memorandum.Memorandum;
+import acme.features.administrator.configurations.AdministratorConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
-import acme.roles.Chef;
 import acme.roles.Epicure;
 
 @Service
@@ -21,6 +23,9 @@ public class EpicureMemorandumCreateService implements AbstractCreateService<Epi
 
 	@Autowired
 	protected EpicureMemorandumRepository repository;
+	
+	@Autowired
+	protected AdministratorConfigurationRepository configurationRepository;
 
 	@Override
 	public boolean authorise(final Request<Memorandum> request) {
@@ -88,6 +93,14 @@ public class EpicureMemorandumCreateService implements AbstractCreateService<Epi
 		
 		final Boolean isConfirmed = request.getModel().getBoolean("confirm");
 		errors.state(request, isConfirmed, "confirm", "chef.memorandum.form.accept.error");
+		
+		final Collection<Configuration> config = this.configurationRepository.findConfigurations();
+		for (final Configuration c : config) {
+			errors.state(request, !c.isSpam(entity.getReport()), "report", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
+		
+
+		}
 	}
 	
 	@Override

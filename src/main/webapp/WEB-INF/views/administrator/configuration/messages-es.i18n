@@ -16,3 +16,4 @@ administrator.configuration.form.label.SpamWords = Palabras Spam
 
 authenticated.administrator.fallo = Esta no es una moneda aceptada
 administrator.configuration.form.button.update = Actualizar configuration
+detected.isSpam= Spam detectado

@@ -25,7 +25,7 @@ import acme.roles.Chef;
 public class ChefRecipeCreateService implements AbstractCreateService<Chef, Recipe> {
 
 	@Autowired
-	protected ChefRecipeRepository					repository;
+	protected ChefRecipeRepository repository;
 
 	@Autowired
 	protected AdministratorConfigurationRepository	confRepository;
@@ -110,10 +110,10 @@ public class ChefRecipeCreateService implements AbstractCreateService<Chef, Reci
 		errors.state(request, this.repository.findRecipeByCode(entity.getCode()) == null, "code", "chef.recipe.code.codeNotUnique");
 
 		for (final Configuration c : config) {
-			errors.state(request, !c.isSpam(entity.getHeading()), "heading", "chef.recipe.isSpam");
-			errors.state(request, !c.isSpam(entity.getDescription()), "description", "chef.recipe.isSpam");
-			errors.state(request, !c.isSpam(entity.getPreparationNotes()), "preparationNotes", "chef.recipe.isSpam");
-			errors.state(request, !c.isSpam(entity.getLink()), "link", "chef.recipe.isSpam");
+			errors.state(request, !c.isSpam(entity.getHeading()), "heading", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getDescription()), "description", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getPreparationNotes()), "preparationNotes", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
 
 		}
 

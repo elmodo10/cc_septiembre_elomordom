@@ -16,3 +16,5 @@ chef.fineDish.list.label.fineDish.identify.budget = Presupuesto
 chef.fineDish.list.label.fineDish.identify.startsAt = Fecha de inicio
 chef.fineDish.list.label.fineDish.identify.finishesAt = Fecha de fin
 chef.fineDish.list.label.fineDish.identify.link = Link
+
+detected.isSpam= Spam detectado
