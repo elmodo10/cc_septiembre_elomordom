@@ -1,18 +1,21 @@
-package acme.testing.chef.fineDish;
+package acme.testing.epicure.fineDish;
+
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class ChefFineDishListOwnTest extends TestHarness{
+public class EpicureFineDishPublishTest extends TestHarness{
+	
+	
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/chef/fine-dish/finedishCreatelisting.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/epicure/fine-dish/finedishCreateprueba.csv" , encoding = "utf-8", numLinesToSkip = 1)
 	@Order(1)
-	public void Create(final int recordIndex, final String status, final String code, final String request, final String budget, final String startsAt, final String finishesAt, final String link) {
-
+	public void positiveTest(final int recordIndex, final String status, final String code,final String request,final String budget ,final String startsAt, final String finishesAt, final String link) {
 		super.signIn("epicure1", "epicure1");
 		super.clickOnMenu("Epicure", "List Fine Dishes");
 		super.clickOnButton("Create finedish");
@@ -26,31 +29,26 @@ public class ChefFineDishListOwnTest extends TestHarness{
 		super.clickOnSubmit("Create finedish");
 
 		
+		
+		
+		super.signOut();
+		
+		super.signIn("epicure1", "epicure1");
+		
 		super.clickOnMenu("Epicure", "List Fine Dishes");
 		
-		super.sortListing(1, "desc");
+		super.sortListing(1, "asc");
         super.clickOnListingRecord(recordIndex);
        
         super.checkFormExists();
         
         super.clickOnSubmit("Publish finedish");
         super.signOut();
-	}
-	
-	
-	@ParameterizedTest
-	@CsvFileSource(resources = "/chef/fine-dish/list-own.csv", encoding = "utf-8" ,numLinesToSkip = 1)
-	@Order(10)
-	public void positiveCase(final int recordIndex, final String status, final String code, final String request, 
-		final String budget, final String startsAt, final String finishesAt, final String link) {
-		
-		super.signIn("administrator", "administrator");
-		
-		super.clickOnMenu("Chef", "List Own Fine Dishes");
-		
-		super.checkListingExists();
-		super.sortListing(1, "desc");
-		
+        super.signIn("administrator", "administrator");
+        super.clickOnMenu("Chef", "List Own Fine Dishes");
+        
+        super.checkListingExists();
+		super.sortListing(1, "asc");
 		super.checkColumnHasValue(recordIndex, 0, status);
 		super.checkColumnHasValue(recordIndex, 1, code);
 		super.checkColumnHasValue(recordIndex, 2, budget);
@@ -67,5 +65,11 @@ public class ChefFineDishListOwnTest extends TestHarness{
 		super.checkInputBoxHasValue("link", link);
 		
 		super.signOut();
+		
 	}
+	
+	
+	
+		
+
 }

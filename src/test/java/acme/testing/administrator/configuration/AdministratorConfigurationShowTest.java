@@ -1,6 +1,7 @@
 package acme.testing.administrator.configuration;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -42,4 +43,21 @@ public class AdministratorConfigurationShowTest extends TestHarness {
 		
 		super.signOut();
 	}
+	
+	@Test
+    @Order(8)
+    public void hackingTest() {
+
+        super.navigate("/administrator/configuration/list");
+        super.checkPanicExists();
+
+        super.signIn("chef1", "chef1");
+        super.navigate("/administrator/configuration/list");
+        super.checkPanicExists();
+        super.signOut();
+
+
+    }
+	
+	
 }
