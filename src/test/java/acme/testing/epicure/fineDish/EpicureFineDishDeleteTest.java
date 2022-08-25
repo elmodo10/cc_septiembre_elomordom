@@ -1,15 +1,17 @@
-package acme.testing.chef.fineDish;
+package acme.testing.epicure.fineDish;
+
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class ChefFineDishListOwnTest extends TestHarness{
+public class EpicureFineDishDeleteTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/chef/fine-dish/finedishCreatelisting.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/epicure/fine-dish/finedishCreateDelete.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(1)
 	public void Create(final int recordIndex, final String status, final String code, final String request, final String budget, final String startsAt, final String finishesAt, final String link) {
 
@@ -26,36 +28,46 @@ public class ChefFineDishListOwnTest extends TestHarness{
 		super.clickOnSubmit("Create finedish");
 
 		
+		
+		
+		super.signOut();
+	}
+	@ParameterizedTest
+	@CsvFileSource(resources = "/epicure/fine-dish/finedishdelete.csv", encoding = "utf-8" ,numLinesToSkip = 1)
+	@Order(2)
+	public void TestDelete(final int recordIndex) {
+		
+		super.signIn("epicure1", "epicure1");
+		
 		super.clickOnMenu("Epicure", "List Fine Dishes");
 		
-		super.sortListing(1, "desc");
-        super.clickOnListingRecord(recordIndex);
-       
-        super.checkFormExists();
-        
-        super.clickOnSubmit("Publish finedish");
-        super.signOut();
+		super.checkListingExists();
+		super.sortListing(2, "asc");
+		super.clickOnListingRecord(recordIndex);
+		super.clickOnSubmit("Delete finedish");
+		super.checkNotErrorsExist();
+		super.signOut();
+		
 	}
 	
-	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/chef/fine-dish/list-own.csv", encoding = "utf-8" ,numLinesToSkip = 1)
-	@Order(10)
+	@CsvFileSource(resources = "/epicure/fine-dish/finedishTestDelete.csv", encoding = "utf-8" ,numLinesToSkip = 1)
+	@Order(2)
 	public void positiveCase(final int recordIndex, final String status, final String code, final String request, 
 		final String budget, final String startsAt, final String finishesAt, final String link) {
 		
-		super.signIn("administrator", "administrator");
+		super.signIn("epicure1", "epicure1");
 		
-		super.clickOnMenu("Chef", "List Own Fine Dishes");
 		
+		super.clickOnMenu("Epicure", "List Fine Dishes");
+		super.sortListing(2, "asc");
 		super.checkListingExists();
-		super.sortListing(1, "desc");
-		
 		super.checkColumnHasValue(recordIndex, 0, status);
 		super.checkColumnHasValue(recordIndex, 1, code);
 		super.checkColumnHasValue(recordIndex, 2, budget);
 		
 		super.clickOnListingRecord(recordIndex);
+		
 		super.checkFormExists();
 		
 		super.checkInputBoxHasValue("status", status);
@@ -68,4 +80,9 @@ public class ChefFineDishListOwnTest extends TestHarness{
 		
 		super.signOut();
 	}
+	
+	
+	
+		
+
 }

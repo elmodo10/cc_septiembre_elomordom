@@ -51,3 +51,5 @@ authenticated.epicure.finedish.list.label.priceGreatherZero = Prize must be grea
 chef.memorandum.form.accept.error = Must confirm the creation
 
 epicure.memorandum.form.button.create = Create new memorandum asociated
+
+epicure.item.title.codeNotUnique = Duplicate code

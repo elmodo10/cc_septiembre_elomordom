@@ -139,7 +139,7 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
     	final FineDish finedish = this.repository.findFineDishByCode(entity.getCode());
 		
 		if(finedish != null) {
-			errors.state(request, finedish.getId() == entity.getId(), "code", "chef.item.title.codeNotUnique");
+			errors.state(request, finedish.getId() == entity.getId(), "code", "epicure.item.title.codeNotUnique");
 		}
  
 		errors.state(request, entity.getBudget().getAmount() > 0.00, "budget", "authenticated.epicure.finedish.list.label.priceGreatherZero");
