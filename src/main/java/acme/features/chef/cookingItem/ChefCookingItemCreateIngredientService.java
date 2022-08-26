@@ -104,15 +104,14 @@ public class ChefCookingItemCreateIngredientService implements AbstractCreateSer
 		assert errors != null;
 		
 		final Collection<Configuration> config = this.configurationRepository.findConfigurations();
-		
 		errors.state(request, this.repository.findCookingItemByCode(entity.getCode()) == null, "code", "inventor.toolkit.title.codeNotUnique");
 		
 		for(final Configuration c : config) {
 
 	
-			errors.state(request, !c.isSpam(entity.getName()), "name", "chef.cookingItem.name.isSpam");
-			errors.state(request, !c.isSpam(entity.getDescription()), "description", "chef.cookingItem.description.isSpam");
-			errors.state(request, !c.isSpam(entity.getLink()), "link", "chef.cookingItem.link.isSpam");
+			errors.state(request, !c.isSpam(entity.getName()), "name", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getDescription()), "description", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
 		}
 		
 		if(entity.getType() == acme.entities.cookingItem.CookingItemType.INGREDIENT) {

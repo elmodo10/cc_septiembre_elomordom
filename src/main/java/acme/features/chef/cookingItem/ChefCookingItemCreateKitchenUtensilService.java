@@ -111,9 +111,9 @@ public class ChefCookingItemCreateKitchenUtensilService implements AbstractCreat
 
 		for (final Configuration c : config) {
 
-			errors.state(request, !c.isSpam(entity.getName()), "name", "chef.cookingItem.name.isSpam");
-			errors.state(request, !c.isSpam(entity.getDescription()), "description", "chef.cookingItem.description.isSpam");
-			errors.state(request, !c.isSpam(entity.getLink()), "link", "chef.cookingItem.link.isSpam");
+			errors.state(request, !c.isSpam(entity.getName()), "name", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getDescription()), "description", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
 		}
 
 		if (entity.getType() == acme.entities.cookingItem.CookingItemType.KITCHEN_UTENSIL) {

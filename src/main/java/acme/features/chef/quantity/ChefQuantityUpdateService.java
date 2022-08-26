@@ -1,11 +1,8 @@
 package acme.features.chef.quantity;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.configuration.Configuration;
 import acme.entities.cookingItem.CookingItem;
 import acme.entities.quantity.Quantity;
 import acme.features.administrator.configurations.AdministratorConfigurationRepository;
@@ -68,22 +65,9 @@ public class ChefQuantityUpdateService implements AbstractUpdateService<Chef, Qu
 		assert entity != null;
 		assert errors != null;
 		
-		final CookingItem i = entity.getCookingitem();
-		
+	
 		errors.state(request, !(entity.getRecipe().getStatus().toString().equals("PUBLISHED")), "number", "chef.quantity.recipe.noPublished");
 
-		
-		final Collection<Configuration> conf = this.confRepository.findConfigurations();
-		for(final Configuration c : conf) {
-			errors.state(request, !c.isSpam(i.getName()), "cookingitem.name", "chef.quantity.Spam");
-			errors.state(request, !c.isSpam(i.getDescription()), "cookingitem.description", "chef.quantity.Spam");
-			errors.state(request, !c.isSpam(i.getLink()), "cookingitem.link", "chef.quantity.Spam");
-	
-			
-			
-		}
-		
-		
 		errors.state(request, entity.getCookingitem().getRetailPrice().getAmount() >= 0.00, "item.retailPrice", "chef.cookingitem.minPrice");
 		
 	}

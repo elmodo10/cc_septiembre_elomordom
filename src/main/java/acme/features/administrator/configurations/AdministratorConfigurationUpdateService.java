@@ -12,6 +12,7 @@
 
 package acme.features.administrator.configurations;
 
+import java.util.Collection;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +72,13 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert errors != null;
 		
 		errors.state(request, entity.getAcceptedCurr().contains(entity.getDefaultCurr()), "defaultCurr", "authenticated.administrator.fallo");
+		
+		final Collection<Configuration> config = this.repository.findConfigurations();	
+		for(final Configuration c : config) {
+		
+			errors.state(request, !c.isSpam(entity.getDefaultCurr()), "defaultCurr", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getAcceptedCurr()), "acceptedCurr", "detected.isSpam");
+		}
 	}
 
 	@Override

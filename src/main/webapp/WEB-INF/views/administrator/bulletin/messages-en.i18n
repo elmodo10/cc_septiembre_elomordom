@@ -19,4 +19,4 @@ administrator.bulletin.form.label.false = False
 administrator.bulletin.form.label.true = True
 
 administrator.announcement.accept.error = You must confirm the creation
-
+detected.isSpam= Spam detected

@@ -21,3 +21,5 @@ chef.fineDish.list.label.fineDish.identify.link = Link
 
 chef.memorandum.form.label.confirm = Confirm
 chef.memorandum.form.button.create = Create new memorandum asociated
+
+detected.isSpam= Spam detected

@@ -50,3 +50,5 @@ chef.memorandum.form.accept.error = Debe confirmar la creación
 
 epicure.memorandum.form.button.create = Crear nuevo memorandum asociado
 epicure.item.title.codeNotUnique = Codigo duplicado
+
+detected.isSpam= Spam detectado

@@ -7,7 +7,9 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.Configuration;
 import acme.entities.fineDish.FineDish;
+import acme.features.administrator.configurations.AdministratorConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -22,6 +24,9 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 	
 	@Autowired
 	protected EpicureFineDishRepository repository;
+	
+	@Autowired
+	protected AdministratorConfigurationRepository configurationRepository;
 	
 	
 	@Override
@@ -79,6 +84,15 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		
 		final Date minimumFinishesAt=DateUtils.addMonths(entity.getStartsAt(), 1);
 		errors.state(request,entity.getFinishesAt().after(minimumFinishesAt), "finishesAt", "epicure.finedish.error.minimumFinishesAt");
+		
+		final Collection<Configuration> config = this.configurationRepository.findConfigurations();
+
+		for (final Configuration c : config) {
+			errors.state(request, !c.isSpam(entity.getRequest()), "request", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getCode()), "code", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
+
+		}
 	}
 
 	

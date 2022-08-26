@@ -73,10 +73,10 @@ public class ChefRecipeUpdateService implements AbstractUpdateService<Chef, Reci
 		final Collection<Configuration> config = this.confRepository.findConfigurations();
 		
 		for(final Configuration c : config) {
-			errors.state(request, !c.isSpam(entity.getHeading()), "heading", "chef.recipe.isSpam");
-			errors.state(request, !c.isSpam(entity.getDescription()), "description", "chef.recipe.isSpam");
-			errors.state(request, !c.isSpam(entity.getPreparationNotes()), "preparationNotes", "chef.recipe.isSpam");
-			errors.state(request, !c.isSpam(entity.getLink()), "link", "chef.recipe.isSpam");
+			errors.state(request, !c.isSpam(entity.getHeading()), "heading", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getDescription()), "description", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getPreparationNotes()), "preparationNotes", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
 			
 		
 		}

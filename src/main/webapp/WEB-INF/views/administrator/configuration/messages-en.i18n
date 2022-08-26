@@ -15,3 +15,4 @@ administrator.configuration.form.label.SpamWords = Spam Words
 
 authenticated.administrator.fallo = This isn't an accepted currency
 administrator.configuration.form.button.update = Update configuration
+detected.isSpam= Spam detected

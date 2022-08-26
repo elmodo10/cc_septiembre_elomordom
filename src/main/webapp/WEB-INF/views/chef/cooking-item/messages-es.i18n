@@ -20,10 +20,10 @@ chef.cookingItem.form.label.kitchen-utensil= Utensilio de cocina
 chef.cookingItem.list.button.create= Crea Artículo de cocina
 chef.cookingItem.form.button.create= Crealo!
 
-chef.cookingItem.list.button.createIngredient= Crea tu ingredienet
+chef.cookingItem.list.button.createIngredient= Crea tu ingrediente
 chef.cookingItem.list.button.createKitchenUtensil= Crea tu utensilio de cocina
-chef.cookingItem.form.button.createIngredient= Crealo este ingrediente
-chef.cookingItem.form.button.createKitchenUtensil= Crealo este utensilio de cocina
+chef.cookingItem.form.button.createIngredient= Crea este ingrediente
+chef.cookingItem.form.button.createKitchenUtensil= Crea este utensilio de cocina
 
 chef.cookingItem.form.buttom.items= Items
 
@@ -31,8 +31,6 @@ chef.cookingItem.form.buttom.items= Items
 chef.cookingItem.form.button.delete=Bórralo
 chef.cookingItem.form.button.update= Actualízalo
 chef.cookingItem.form.button.publish= Publícalo
-chef.cookingItem.name.isSpam= Spam detectado! 
-chef.cookingItem.description.isSpam= Spam detectado! 
-chef.cookingItem.link.isSpam=Spam detectado! 
+detected.isSpam= Spam detectado
 chef.precioMinimo= Precio debe ser mayor que cero
-chef.precioMinimo.kitchen= Precio debe ser mayor o igual que cero
+chef.precioMinimo.kitchen= Precio debe ser mayor que cero

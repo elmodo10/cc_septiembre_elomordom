@@ -1,12 +1,13 @@
 package acme.features.administrator.bulletin;
 
-import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.bulletin.Bulletin;
+import acme.entities.configuration.Configuration;
 import acme.features.administrator.configurations.AdministratorConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -58,18 +59,17 @@ public class AdministratorBulletinCreateService implements AbstractCreateService
 		assert entity != null;
 		assert errors != null;
 
-//		final Configuration config = this.configurationRepository.findConfiguration();
-//		
-//		final SpamLib spam = new SpamLib(config.getWeakSpamWords(), config.getStrongSpamWords(), config.getWeakSpamThreshold(), config.getStrongSpamThreshold());
-//		
-//		errors.state(request, !spam.isSpamStrong(entity.getTitle()), "title","administrator.announcement.strongspam");
-//		errors.state(request, !spam.isSpamWeak(entity.getTitle()), "title","administrator.announcement.weakspam");
-//		errors.state(request, !spam.isSpamStrong(entity.getBody()), "body","administrator.announcement.strongspam");
-//		errors.state(request, !spam.isSpamWeak(entity.getBody()), "body","administrator.announcement.weakspam");
-//		errors.state(request, !spam.isSpamStrong(entity.getLink()), "link","administrator.announcement.strongspam");
-//		errors.state(request, !spam.isSpamWeak(entity.getLink()), "link","administrator.announcement.weakspam");
-//		
-//
+		
+		final Collection<Configuration> config = this.configurationRepository.findConfigurations();
+		for(final Configuration c : config) {
+			
+			errors.state(request, !c.isSpam(entity.getHeading()), "heading", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getPieceOfText()), "pieceOfText", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
+		}
+	
+		
+
 		final boolean confirm = request.getModel().getBoolean("confirm");
 		errors.state(request, confirm, "confirm", "administrator.announcement.accept.error");
 
