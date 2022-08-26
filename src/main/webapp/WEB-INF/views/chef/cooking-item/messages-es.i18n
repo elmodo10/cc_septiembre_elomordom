@@ -34,3 +34,5 @@ chef.cookingItem.form.button.publish= Publícalo
 detected.isSpam= Spam detectado
 chef.precioMinimo= Precio debe ser mayor que cero
 chef.precioMinimo.kitchen= Precio debe ser mayor que cero
+
+epicure.label.moneyExchange = Presupuesto en la divisa del sistema
