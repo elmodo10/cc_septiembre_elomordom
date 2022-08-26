@@ -11,20 +11,16 @@ public class ChefMemorandumTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/memorandum/memorandum.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10) 
-	public void testInventorsOnPatronageReportsList(final int recordIndex, final String status, final String code,final String budget, 
+	public void testChefMemorandumList(final int recordIndex, final String status, final String code,final String budget, 
 		final String seqNumber, final String instantiationMoment, final String report, final String link2) {
 		
 		super.signIn("chef1", "chef1");
 		super.clickOnMenu("Chef", "List Own Fine Dishes");
 		super.checkListingExists();
 		
-		super.checkColumnHasValue(recordIndex, 0, status);
-		super.checkColumnHasValue(recordIndex, 1, code);
-		super.checkColumnHasValue(recordIndex, 2, budget);
-		
         super.clickOnListingRecord(recordIndex);
         
-        super.clickOnButton("Memorandum");
+        super.clickOnButton("Memorandums");
         
         super.checkColumnHasValue(recordIndex, 0, seqNumber);
 		super.checkColumnHasValue(recordIndex, 1, instantiationMoment);

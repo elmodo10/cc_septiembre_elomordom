@@ -45,13 +45,11 @@ public class AnyPeepCreateService implements AbstractCreateService<Any, Peep>{
 		assert entity != null;
 		assert errors != null;
 		
-		Date creationTime;
-		Calendar calendar;
-		creationTime = new Date();
-		calendar = Calendar.getInstance();
-		creationTime = calendar.getTime();
+		Date ActualMoment;
+
+		ActualMoment = new Date(System.currentTimeMillis() - 1);
 		request.bind(entity, errors, "writer", "pieceOfText","email","heading");
-		entity.setInstantionMoment(creationTime);
+		entity.setInstantionMoment(ActualMoment);
 		
 	}
 	
@@ -89,6 +87,11 @@ public class AnyPeepCreateService implements AbstractCreateService<Any, Peep>{
 	public void create(final Request<Peep> request, final Peep entity) {
 		assert request != null;
 		assert entity != null;
+		
+		Date ActualMoment;
+
+		ActualMoment = new Date(System.currentTimeMillis() - 1);
+		entity.setInstantionMoment(ActualMoment);
 
 		this.repository.save(entity);
 	}
