@@ -12,6 +12,7 @@
 			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code" readonly="true" />
 			<acme:input-textbox code="chef.cookingItem.form.label.description" path="description" readonly="true" />
 			<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" readonly="true" />
+				<acme:input-money code="epicure.label.moneyExchange" path="moneyExchange" readonly="true" />
 			<acme:input-url code="chef.cookingItem.form.label.link" path="link" readonly="true" />
 			<acme:input-textbox code="chef.cookingItem.form.label.status" path="status" readonly= "true"/>
 			<acme:input-textbox code="chef.cookingItem.form.label.type" path="type" readonly="true" />

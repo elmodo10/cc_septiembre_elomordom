@@ -33,3 +33,6 @@ chef.cookingItem.form.button.publish= Publish
 detected.isSpam= Spam detected
 chef.precioMinimo= Price greater than zero
 chef.precioMinimo.kitchen= Price greater than zero
+
+
+epicure.label.moneyExchange = Budget in System's Currency
