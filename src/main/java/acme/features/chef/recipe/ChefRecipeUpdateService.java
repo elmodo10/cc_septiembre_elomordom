@@ -41,7 +41,7 @@ public class ChefRecipeUpdateService implements AbstractUpdateService<Chef, Reci
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "code", "heading", "description", "preparationNotes", "link", "status");
+		request.bind(entity, errors, "code", "heading", "description", "preparationNotes", "link");
 		
 	}
 
@@ -51,7 +51,7 @@ public class ChefRecipeUpdateService implements AbstractUpdateService<Chef, Reci
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "heading", "description", "preparationNotes", "link", "status");
+		request.unbind(entity, model, "code", "heading", "description", "preparationNotes", "link");
 		
 	}
 

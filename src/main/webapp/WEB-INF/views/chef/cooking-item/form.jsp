@@ -7,21 +7,24 @@
 
 <acme:form>
 	<jstl:choose>
-		<jstl:when test="${command == 'show'}">
-			<acme:input-textbox code="chef.cookingItem.form.label.name" path="name" readonly="true" />
-			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code" readonly="true" />
-			<acme:input-textbox code="chef.cookingItem.form.label.description" path="description" readonly="true" />
-			<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" readonly="true" />
+		<jstl:when test="${command=='show'}">
+			
+		
+				<acme:input-textbox code="chef.cookingItem.form.label.name" path="name" readonly="true" />
+				<acme:input-textbox code="chef.cookingItem.form.label.code" path="code" readonly="true" />
+				<acme:input-textbox code="chef.cookingItem.form.label.description" path="description" readonly="true" />
+				<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" readonly="true" />
 				<acme:input-money code="epicure.label.moneyExchange" path="moneyExchange" readonly="true" />
-			<acme:input-url code="chef.cookingItem.form.label.link" path="link" readonly="true" />
-			<acme:input-textbox code="chef.cookingItem.form.label.status" path="status" readonly= "true"/>
-			<acme:input-textbox code="chef.cookingItem.form.label.type" path="type" readonly="true" />
+				<acme:input-url code="chef.cookingItem.form.label.link" path="link" readonly="true" />
+		
+			
+			
+			
 			
 			<jstl:if test="${status == 'NONE_PUBLISHED' }">
 				<acme:submit code="chef.cookingItem.form.button.delete" action="/chef/cooking-item/delete"/>
 				<acme:button code="chef.cookingItem.form.button.update" action="/chef/cooking-item/update?id=${id}"/>	
 				<acme:submit code="chef.cookingItem.form.button.publish" action="/chef/cooking-item/publish"/>	
-		
 			</jstl:if>
 			
 		</jstl:when>
@@ -32,33 +35,27 @@
 			<acme:input-textbox code="chef.cookingItem.form.label.description" path="description"/>
 			<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" />
 			<acme:input-textbox code="chef.cookingItem.form.label.link" path="link"/>
-			<acme:input-textbox code="chef.cookingItem.form.label.type" path="type" readonly="true"  />
 			<acme:submit code="chef.cookingItem.form.button.createIngredient" action="/chef/cooking-item/createIngredient"/>
 		</jstl:when>
 		
-					<jstl:when test="${command == 'createKitchenUtensil'}">
+		<jstl:when test="${command == 'createKitchenUtensil'}">
 			<acme:input-textbox code="chef.cookingItem.form.label.name" path="name"/>
 			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code" readonly="true"  />
 			<acme:input-textbox code="chef.cookingItem.form.label.description" path="description"/>
 			<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" />
 			<acme:input-textbox code="chef.cookingItem.form.label.link" path="link"/>
-			<acme:input-textbox code="chef.cookingItem.form.label.type" path="type" readonly="true"  />
 			<acme:submit code="chef.cookingItem.form.button.createKitchenUtensil" action="/chef/cooking-item/createKitchenUtensil"/>
+			
 		</jstl:when>
-		
-				<jstl:when test="${command == 'update'}">
-			<acme:input-textbox code="chef.cookingItem.form.label.name" path="name"/>
-			<acme:input-textbox code="chef.cookingItem.form.label.code" path="code" readonly="true"  />
-			<acme:input-textbox code="chef.cookingItem.form.label.description" path="description"/>
-			<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" />
-			<acme:input-textbox code="chef.cookingItem.form.label.link" path="link"/>
-			<acme:input-textbox code="chef.cookingItem.form.label.status" path="status" readonly="true" />
-			<acme:input-select code="chef.cookingItem.form.label.type" path="type">
-				<acme:input-option code="chef.cookingItem.form.label.ingredient" value="INGREDIENT" selected="${ type == 'INGREDIENT' }"/>
-				<acme:input-option code="chef.cookingItem.form.label.kitchen-utensil" value="KITCHEN_UTENSIL" selected="${ type == 'KITCHEN_UTENSIL' }"/>
-			</acme:input-select>
-			<acme:submit code="chef.cookingItem.form.button.update" action="/chef/cooking-item/update"/>
+		<jstl:when test="${command == 'update'}">
+				<acme:input-textbox code="chef.cookingItem.form.label.name" path="name"/>
+				<acme:input-textbox code="chef.cookingItem.form.label.code" path="code" readonly="true"  />
+				<acme:input-textbox code="chef.cookingItem.form.label.description" path="description"/>
+				<acme:input-money code="chef.cookingItem.form.label.retailPrice" path="retailPrice" />
+				<acme:input-textbox code="chef.cookingItem.form.label.link" path="link"/>
+				<acme:submit code="chef.cookingItem.form.button.update" action="/chef/cooking-item/update"/>	
 		</jstl:when>
+			
 
 
 

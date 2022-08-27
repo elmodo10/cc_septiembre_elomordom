@@ -10,13 +10,16 @@
 <acme:form>
 <jstl:choose>
 
-	<jstl:when test="${command == 'show'}">
+	<jstl:when test="${command == 'show' }">
+	
 		<acme:input-textbox code="chef.recipe.form.label.code" path="code" readonly="true"/>
-		<acme:input-textbox code="chef.recipe.form.label.heading" path="heading"/>
-		<acme:input-textbox code="chef.recipe.form.label.description" path="description"/>
-		<acme:input-textbox code="chef.recipe.form.label.preparationNotes" path="preparationNotes"/>
-		<acme:input-url code="chef.recipe.form.label.link" path="link"/>
-		<acme:input-textbox code="chef.recipe.form.label.status" path="status"/>
+		<acme:input-textbox code="chef.recipe.form.label.heading" path="heading" readonly="true"/>
+		<acme:input-textbox code="chef.recipe.form.label.description" path="description" readonly="true"/>
+		<acme:input-textbox code="chef.recipe.form.label.preparationNotes" path="preparationNotes" readonly="true"/>
+		<acme:input-url code="chef.recipe.form.label.link" path="link" readonly="true"/>
+
+	
+		
 	
 	<jstl:if test="${status == 'PUBLISHED' }">
 		<acme:button code="chef.recipe.form.buttom.items" action="/chef/quantity/list-by-recipe?id=${id}"/>
@@ -40,16 +43,16 @@
 		<acme:input-url code="chef.recipe.form.label.link" path="link"/>
 		<acme:submit code = "chef.recipe.form.button.create" action = "/chef/recipe/create"/>
 	</jstl:when>
-
-		<jstl:when test="${command == 'update'}">
-		<acme:input-textbox code="chef.recipe.form.label.code" path="code" readonly="true" />
+	
+	<jstl:when test = "${command == 'update' }">
+		<acme:input-textbox code="chef.recipe.form.label.code" path="code" readonly="true"/>
 		<acme:input-textbox code="chef.recipe.form.label.heading" path="heading"/>
 		<acme:input-textbox code="chef.recipe.form.label.description" path="description"/>
 		<acme:input-textbox code="chef.recipe.form.label.preparationNotes" path="preparationNotes"/>
 		<acme:input-url code="chef.recipe.form.label.link" path="link"/>
-		<acme:input-textbox code="chef.recipe.form.label.status" path="status"/>
 		<acme:submit code="chef.recipe.form.button.update" action="/chef/recipe/update"/>
-		</jstl:when>
+	</jstl:when>
+		
 	
 	
 	

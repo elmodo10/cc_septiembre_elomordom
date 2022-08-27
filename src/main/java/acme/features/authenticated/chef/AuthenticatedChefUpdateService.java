@@ -1,8 +1,12 @@
 package acme.features.authenticated.chef;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.Configuration;
+import acme.features.administrator.configurations.AdministratorConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.HttpMethod;
@@ -21,6 +25,10 @@ public class AuthenticatedChefUpdateService implements AbstractUpdateService<Aut
 
 	@Autowired
 	protected AuthenticatedChefRepository repository;
+	
+	@Autowired
+	protected AdministratorConfigurationRepository	configurationRepository;
+	
 	
 	@Override
 	public boolean authorise(final Request<Chef> request) {
@@ -68,6 +76,17 @@ public class AuthenticatedChefUpdateService implements AbstractUpdateService<Aut
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+final Collection<Configuration> config = this.configurationRepository.findConfigurations();
+		
+		
+		for(final Configuration c : config) {
+
+	
+			errors.state(request, !c.isSpam(entity.getOrganisation()), "organisation", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getAssertion()), "assertion", "detected.isSpam");
+			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
+		}
 	}
 	
 	@Override

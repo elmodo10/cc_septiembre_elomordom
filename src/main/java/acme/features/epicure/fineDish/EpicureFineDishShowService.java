@@ -58,6 +58,7 @@ public class EpicureFineDishShowService implements AbstractShowService<Epicure, 
 		assert entity != null;
 		assert model != null;
 		
+		model.setAttribute("chefs", this.repository.findChefs());
 		final String defaultCurrency = this.configRepository.getDefaultCurrency();
 		final MoneyExchange me = new MoneyExchange(entity.getBudget(), defaultCurrency);
 		model.setAttribute("moneyExchange", me.getExchange());

@@ -93,6 +93,7 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
 
 		}
+	
 	}
 
 	

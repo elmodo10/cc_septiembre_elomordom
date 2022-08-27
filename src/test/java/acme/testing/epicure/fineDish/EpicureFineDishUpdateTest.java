@@ -46,7 +46,7 @@ public class EpicureFineDishUpdateTest extends TestHarness{
         super.clickOnListingRecord(recordIndex);
        
         super.checkFormExists();
-        super.clickOnButton("Update finedish");
+    	super.clickOnButton("Update finedish");	
         super.fillInputBoxIn("code", code);
         super.fillInputBoxIn("request",request);
 		super.fillInputBoxIn("budget",budget);
@@ -79,7 +79,7 @@ public class EpicureFineDishUpdateTest extends TestHarness{
 		super.sortListing(1, "asc");
         super.clickOnListingRecord(recordIndex);
         super.checkFormExists();
-        super.clickOnButton("Update finedish");
+        
         super.fillInputBoxIn("code", code);
         super.fillInputBoxIn("request", request);
 		super.fillInputBoxIn("budget",budget);

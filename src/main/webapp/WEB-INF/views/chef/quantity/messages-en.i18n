@@ -3,7 +3,7 @@ chef.quantity.list.label.name = Name
 chef.quantity.list.label.code = Code
 chef.quantity.list.label.retailPrice = Retail Price
 chef.quantity.list.label.status = Status
-
+chef.quantity.list.label.type = Type
 chef.quantity.form.label.number = Number 
 chef.quantity.form.label.name = Name
 chef.quantity.form.label.code = Code

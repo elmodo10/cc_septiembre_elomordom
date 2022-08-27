@@ -10,7 +10,7 @@
 	<acme:list-column code="chef.cookingItem.list.label.description" path="description" width="20%"/>
 	<acme:list-column code="chef.cookingItem.list.label.retailPrice" path="retailPrice" width="20%"/>		
 	<acme:list-column code="chef.cookingItem.list.label.link" path="link" width="20%"/>
-	<acme:list-column code="chef.cookingItem.list.label.type" path="type" width="20%"/>
+
 
 </acme:list>
 

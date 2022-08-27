@@ -3,7 +3,7 @@ chef.quantity.list.label.name = Nombre
 chef.quantity.list.label.code = Codigo
 chef.quantity.list.label.retailPrice = Precio
 chef.quantity.list.label.status = Estado
-
+chef.quantity.list.label.type = Tipo
 chef.quantity.form.label.number = Número 
 chef.quantity.form.label.name = Nombre
 chef.quantity.form.label.code = Codigo

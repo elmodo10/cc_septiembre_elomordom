@@ -42,7 +42,7 @@ public class ChefCookingItemCreateIngredientService implements AbstractCreateSer
 		assert entity != null;
 		assert errors != null;
 			
-		request.bind(entity, errors, "name", "code", "description", "retailPrice","link","type");
+		request.bind(entity, errors, "name", "code", "description", "retailPrice","link");
 
 	}
 	
@@ -52,7 +52,7 @@ public class ChefCookingItemCreateIngredientService implements AbstractCreateSer
 		assert entity != null;
 		assert model != null;
 			
-		request.unbind(entity, model, "name", "code", "description","retailPrice", "link","type");
+		request.unbind(entity, model, "name", "code", "description","retailPrice", "link");
 			
 	}
 	
@@ -119,6 +119,7 @@ public class ChefCookingItemCreateIngredientService implements AbstractCreateSer
 		} else {
 			errors.state(request, entity.getRetailPrice().getAmount() >= 0.00, "retailPrice", "chef.precioMinimo.kitchen");
 		}
+		
 
 		
 	}
