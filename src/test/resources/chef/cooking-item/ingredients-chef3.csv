@@ -1,3 +1,3 @@
-recordIndex,name,code,description,retailPrice,link,type
-0,Orégano,AB:LAH-012,ingrediente bueno,EUR 10.00,https://google.com,INGREDIENT
-1,Queso,AB:POC-012,ingrediente bueno,EUR 10.00,https://google.com,INGREDIENT
+recordIndex,name,code,description,retailPrice,link
+0,Orégano,AB:LAH-012,ingrediente bueno,EUR 10.00,https://google.com
+1,Queso,AB:POC-012,ingrediente bueno,EUR 10.00,https://google.com
