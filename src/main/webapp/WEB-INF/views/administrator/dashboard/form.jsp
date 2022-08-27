@@ -137,58 +137,7 @@
 			</c:forEach>
 		</div>
 		
-		<div class="dp2-base" id="components">
-			<h2><acme:message code="administrator.dashboard.form.label.ingredient"/></h2>
-				
-			<c:forEach items="${ingredientRetailPrice}" var="pair">
-				<h4>${pair.key.getSecond()} <acme:message code="administrator.dashboard.form.label.in" /> ${pair.key.getFirst()}</h4>
-				<div class="row">
-					<div class="col">
-						<div class="card">
-							<div class="card-body">
-								<label>
-									<acme:message code="administrator.dashboard.form.label.maxPrice" />
-									<input type="text" value="${pair.value.Max}" readonly />
-								</label>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col">
-						<div class="card">
-							<div class="card-body">
-								<label>
-									<acme:message code="administrator.dashboard.form.label.minPrice"/>
-									<input type="text" value="${pair.value.Min}" readonly />
-								</label>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col">
-						<div class="card">
-							<div class="card-body">					
-								<label>
-									<acme:message code="administrator.dashboard.form.label.avgPrice"/>
-									<input type="text" value="${pair.value.Avg}" readonly />
-								</label>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col">
-						<div class="card">
-							<div class="card-body">
-								<label>
-									<acme:message code="administrator.dashboard.form.label.devPrice"/>
-									<input type="text" value="${pair.value.Dev}" readonly />
-								</label>
-							</div>
-						</div>
-					</div>
-				</div>
-			</c:forEach>
-		</div>
+		
 		
 		<div class="dp2-base" id="items">
 			<h2><acme:message code="administrator.dashboard.form.label.totals"/></h2>
@@ -252,7 +201,6 @@
 		<ul>
 			<li><a href="${requestScope['javax.servlet.forward.request_uri']}#totals"><acme:message code="administrator.dashboard.form.label.totals"/></a></li>
 			<li><a href="${requestScope['javax.servlet.forward.request_uri']}#budgets"><acme:message code="administrator.dashboard.form.label.budgets"/></a></li>
-			<li><a href="${requestScope['javax.servlet.forward.request_uri']}#components"><acme:message code="administrator.dashboard.form.label.ingredient"/></a></li>
 			<li><a href="${requestScope['javax.servlet.forward.request_uri']}#items"><acme:message code="administrator.dashboard.form.label.items"/></a></li>
 		</ul>
 	</div>

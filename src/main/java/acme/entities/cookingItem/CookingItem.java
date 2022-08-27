@@ -40,6 +40,7 @@ public class CookingItem extends AbstractEntity{
 	protected String description;
 	
 	@NotNull
+	@Valid
 	protected Money retailPrice;
 	
 	@URL

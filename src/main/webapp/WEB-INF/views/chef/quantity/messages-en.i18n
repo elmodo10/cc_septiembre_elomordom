@@ -3,7 +3,7 @@ chef.quantity.list.label.name = Name
 chef.quantity.list.label.code = Code
 chef.quantity.list.label.retailPrice = Retail Price
 chef.quantity.list.label.status = Status
-
+chef.quantity.list.label.type = Type
 chef.quantity.form.label.number = Number 
 chef.quantity.form.label.name = Name
 chef.quantity.form.label.code = Code
@@ -43,5 +43,6 @@ chef.quantity.form.label.gallon = Gallon
 chef.quantity.form.label.spoon = Spoon
 chef.quantity.form.label.vacio= Choose an amount
 
-
+quantity.chef.noutensil = There are no kitchen utensils to add
+quantity.chef.noingredientes = There are no ingredients to add
 

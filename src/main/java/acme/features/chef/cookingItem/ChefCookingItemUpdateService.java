@@ -39,7 +39,7 @@ public class ChefCookingItemUpdateService implements AbstractUpdateService<Chef,
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "name", "code", "description", "retailPrice", "link", "status","type");
+		request.bind(entity, errors, "name", "code", "description", "retailPrice", "link");
 		
 	}
 	
@@ -49,7 +49,7 @@ public class ChefCookingItemUpdateService implements AbstractUpdateService<Chef,
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model,"name", "code", "description", "retailPrice", "link", "status","type");
+		request.unbind(entity, model,"name", "code", "description", "retailPrice", "link");
 		
 	}
 	

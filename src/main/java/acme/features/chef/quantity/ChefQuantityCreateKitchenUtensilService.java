@@ -91,7 +91,7 @@ public class ChefQuantityCreateKitchenUtensilService implements AbstractCreateSe
 		}
 
 
-		errors.state(request, !aux.contains(entity.getCookingitem()), "number", "chef.quantity.cookingitem.exist");
+		
 
 	}
 

@@ -24,7 +24,6 @@
 			<acme:input-textarea code="chef.quantity.form.label.description" path="cookingitem.description" readonly="true"/>
 			<acme:input-money code="chef.quantity.form.label.retailPrice" path="cookingitem.retailPrice" readonly="true"/>
 			<acme:input-url code="chef.quantity.form.label.link" path="cookingitem.link" readonly="true"/>
-			<acme:input-textbox code="chef.quantity.form.label.status" path="cookingitem.status" readonly="true" />
 			<acme:input-textbox code="chef.quantity.form.label.type" path="cookingitem.type" readonly="true"/>
 		
 			<jstl:if test="${cookingitem.status == 'NONE_PUBLISHED' && cookingitem.getChef().getId() == chefId}" >

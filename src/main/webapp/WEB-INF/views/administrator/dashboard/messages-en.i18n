@@ -6,7 +6,7 @@ administrator.dashboard.form.label.index = Index
 administrator.dashboard.form.label.totals = Total cooking items
 administrator.dashboard.form.label.budgets = Budgets data
 administrator.dashboard.form.label.ingredient = Ingredients data by description & currency
-administrator.dashboard.form.label.items = Cooking Items data by currency
+administrator.dashboard.form.label.items = Cooking Items by currency
 
 administrator.dashboard.form.label.totalingredient = Total ingredientes
 administrator.dashboard.form.label.totalkitchenutensil = Total kitchen utensil
