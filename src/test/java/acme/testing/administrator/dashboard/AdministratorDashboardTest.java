@@ -44,7 +44,7 @@ public class AdministratorDashboardTest extends TestHarness {
 		this.signIn("administrator", "administrator");
 		
 		// check that an admin user has admin dashboard link on menu
-		this.checkXpathContains("//*[@id=\"mainMenu\"]/ul[1]/li[2]/div/a[5]", "Dashboard");
+		this.checkXpathContains("//*[@id=\"mainMenu\"]/ul[1]/li[2]/div/a[6]", "Dashboard");
 		
 		// check that an admin user can access to admin dashboard
 		this.navigate(this.adminPath);
@@ -63,13 +63,13 @@ public class AdministratorDashboardTest extends TestHarness {
 		
 		final Map<String, String> inputsMap = new HashMap<String, String>();
 		
-		// Total items & patronages
+		// Total items & finedish
 		inputsMap.put("//*[@id=\"totals\"]/div[1]/div[1]/div/div/label/input", "7");
 		inputsMap.put("//*[@id=\"totals\"]/div[1]/div[2]/div/div/label/input", "7");
 		
-		// Total proposed, accepted & denied patronages
+		// Total proposed, accepted & denied finedish
 		inputsMap.put("//*[@id=\"totals\"]/div[2]/div[1]/div/div/label/input", "7");
-		inputsMap.put("//*[@id=\"totals\"]/div[2]/div[2]/div/div/label/input", "7");
+		inputsMap.put("//*[@id=\"totals\"]/div[2]/div[2]/div/div/label/input", "8");
 		inputsMap.put("//*[@id=\"totals\"]/div[2]/div[3]/div/div/label/input", "7");
 		
 		// Budgets
@@ -81,9 +81,9 @@ public class AdministratorDashboardTest extends TestHarness {
 		
 		// Acepted
 		inputsMap.put("//*[@id=\"budgets\"]/div[2]/div[1]/div/div/label/input", "68.0");
-		inputsMap.put("//*[@id=\"budgets\"]/div[2]/div[2]/div/div/label/input", "34.0");
-		inputsMap.put("//*[@id=\"budgets\"]/div[2]/div[3]/div/div/label/input", "48.857142857142854");
-		inputsMap.put("//*[@id=\"budgets\"]/div[2]/div[4]/div/div/label/input", "10.147886077244594");
+		inputsMap.put("//*[@id=\"budgets\"]/div[2]/div[2]/div/div/label/input", "21.0");
+		inputsMap.put("//*[@id=\"budgets\"]/div[2]/div[3]/div/div/label/input", "45.375");
+		inputsMap.put("//*[@id=\"budgets\"]/div[2]/div[4]/div/div/label/input", "13.228165972650933");
 		
 		// Denied
 		inputsMap.put("//*[@id=\"budgets\"]/div[3]/div[1]/div/div/label/input", "80.0");
@@ -91,31 +91,14 @@ public class AdministratorDashboardTest extends TestHarness {
 		inputsMap.put("//*[@id=\"budgets\"]/div[3]/div[3]/div/div/label/input", "45.857142857142854");
 		inputsMap.put("//*[@id=\"budgets\"]/div[3]/div[4]/div/div/label/input", "25.06807059319297");
 		
-		// Components data by tech & currency
-		// Server in eur
-		inputsMap.put("//*[@id=\"components\"]/div/div[1]/div/div/label/input", "17.0");
-		inputsMap.put("//*[@id=\"components\"]/div/div[2]/div/div/label/input", "10.0");
-		inputsMap.put("//*[@id=\"components\"]/div/div[3]/div/div/label/input", "11.428571428571429");
-		inputsMap.put("//*[@id=\"components\"]/div/div[4]/div/div/label/input", "2.498979383505129");
 		
-		// Server in GBP
-		//inputsMap.put("//*[@id=\"components\"]/div[2]/div[1]/div/div/label/input", "125.0");
-		//inputsMap.put("//*[@id=\"components\"]/div[2]/div[2]/div/div/label/input", "122.0");
-		//inputsMap.put("//*[@id=\"components\"]/div[2]/div[3]/div/div/label/input", "123.5");
-		//inputsMap.put("//*[@id=\"components\"]/div[2]/div[4]/div/div/label/input", "1.5");
-		
-		// Total items and patronages
+		// Total items 
 		// ingredient -> currency eur
 		inputsMap.put("//*[@id=\"items\"]/div[1]/div[1]/div/div/label/input", "17.0");
 		inputsMap.put("//*[@id=\"items\"]/div[1]/div[2]/div/div/label/input", "10.0");
 		inputsMap.put("//*[@id=\"items\"]/div[1]/div[3]/div/div/label/input", "11.428571428571429");
 		inputsMap.put("//*[@id=\"items\"]/div[1]/div[4]/div/div/label/input", "2.498979383505129");
 		
-		// Component -> currency USD
-		//inputsMap.put("//*[@id=\"items\"]/div[2]/div[1]/div/div/label/input", "10.0");
-		//inputsMap.put("//*[@id=\"items\"]/div[2]/div[2]/div/div/label/input", "10.0");
-		//inputsMap.put("//*[@id=\"items\"]/div[2]/div[3]/div/div/label/input", "10.0");
-		//inputsMap.put("//*[@id=\"items\"]/div[2]/div[4]/div/div/label/input", "0.0");
 		
 		// kitchen utensil -> currency eur
 		inputsMap.put("//*[@id=\"items\"]/div[2]/div[1]/div/div/label/input", "15.0");
@@ -123,11 +106,7 @@ public class AdministratorDashboardTest extends TestHarness {
 		inputsMap.put("//*[@id=\"items\"]/div[2]/div[3]/div/div/label/input", "14.285714285714286");
 		inputsMap.put("//*[@id=\"items\"]/div[2]/div[4]/div/div/label/input", "1.749635530559413");
 		
-		// Tool -> currency eur
-		//inputsMap.put("//*[@id=\"items\"]/div[4]/div[1]/div/div/label/input", "980.0");
-		//inputsMap.put("//*[@id=\"items\"]/div[4]/div[2]/div/div/label/input", "980.0");
-		//inputsMap.put("//*[@id=\"items\"]/div[4]/div[3]/div/div/label/input", "980.0");
-		//inputsMap.put("//*[@id=\"items\"]/div[4]/div[4]/div/div/label/input", "0.0");
+
 		
 		for(final Map.Entry<String, String> entry : inputsMap.entrySet()) {
 			this.checkXpathInputValue(entry.getKey(), entry.getValue());
