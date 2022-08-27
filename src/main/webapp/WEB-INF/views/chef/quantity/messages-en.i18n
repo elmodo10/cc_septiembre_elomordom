@@ -43,5 +43,6 @@ chef.quantity.form.label.gallon = Gallon
 chef.quantity.form.label.spoon = Spoon
 chef.quantity.form.label.vacio= Choose an amount
 
-
+quantity.chef.noutensil = There are no kitchen utensils to add
+quantity.chef.noingredientes = There are no ingredients to add
 

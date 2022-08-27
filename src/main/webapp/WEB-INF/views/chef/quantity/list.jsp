@@ -15,8 +15,23 @@
 </acme:list>
 
 		<jstl:if test="${statusreci == 'NONE_PUBLISHED'}">
+		<jstl:if test="${lingre == '0'}">
+		<h2><acme:message code="quantity.chef.noingredientes"/></h2>
+		</jstl:if>
+		
+		<jstl:if test="${lingre != '0'}">
 			<acme:button code="chef.recipe.form.button.quantity.ingredient" action="/chef/quantity/createIngredient?id=${param.id}"/>
+		</jstl:if>
+		
+		<jstl:if test="${lutensil == '0'}">
+			<h2><acme:message code="quantity.chef.noutensil"/></h2>
+		</jstl:if>
+		
+		<jstl:if test="${lutensil != '0'}">
 			<acme:button code="chef.recipe.form.button.quantity.utensil" action="/chef/quantity/createKitchenUtensil?id=${param.id}"/>
+		</jstl:if>
+		
+		
 		</jstl:if>
 
 

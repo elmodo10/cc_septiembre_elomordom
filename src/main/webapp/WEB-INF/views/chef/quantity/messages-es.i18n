@@ -45,4 +45,6 @@ chef.quantity.form.label.spoon = Cucharada
 
 chef.quantity.form.label.vacio= Elige una cantidad
 
+quantity.chef.noutensil = No existen utensilios de cocina para añadir
+quantity.chef.noingredientes = No existen ingredientes para añadir
 

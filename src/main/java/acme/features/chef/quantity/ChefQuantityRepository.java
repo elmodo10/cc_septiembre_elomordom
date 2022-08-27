@@ -38,4 +38,10 @@ public interface ChefQuantityRepository extends AbstractRepository{
 	@Query("select i from CookingItem i WHERE i.code = :code")
 	CookingItem findCookingItemByCode(String code);
 	
+	@Query("select i from CookingItem i where i.type = acme.entities.cookingItem.CookingItemType.INGREDIENT and i.chef.id = :id")
+	List<CookingItem> findIngredientsByChefId(int id);
+	
+	@Query("select i from CookingItem i where i.type = acme.entities.cookingItem.CookingItemType.KITCHEN_UTENSIL and i.chef.id = :id")
+	List<CookingItem> findKitchenUtensilsByChefId(int id);
+	
 }

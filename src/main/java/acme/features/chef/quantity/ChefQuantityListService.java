@@ -1,10 +1,12 @@
 package acme.features.chef.quantity;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.cookingItem.CookingItem;
 import acme.entities.quantity.Quantity;
 import acme.entities.recipe.Recipe;
 import acme.features.administrator.configurations.AdministratorConfigurationRepository;
@@ -54,16 +56,20 @@ public class ChefQuantityListService implements AbstractListService<Chef, Quanti
 		int masterId;
 		Recipe recipe;
 
-
+		
 		masterId = request.getModel().getInteger("id");
 		recipe = this.repository.findOneRecipeById(masterId);
 		
 		Status me = recipe.getStatus();
 		
 		model.setAttribute("statusreci", me.toString());
+		int chefid = recipe.getChef().getId();
 		
 		
-		
+		List<CookingItem> lutensil = this.repository.findKitchenUtensilsByChefId(chefid);
+		List<CookingItem> lingre = this.repository.findIngredientsByChefId(chefid);
+		model.setAttribute("lingre", lingre.size());
+		model.setAttribute("lutensil", lutensil.size());
 		
 		
 	}
@@ -76,6 +82,7 @@ public class ChefQuantityListService implements AbstractListService<Chef, Quanti
 		
 		final Recipe t = this.repository.findOneRecipeById(request.getModel().getInteger("id"));
 		model.setAttribute("tStatus", t.getStatus());
+		
 		
 		
 		
