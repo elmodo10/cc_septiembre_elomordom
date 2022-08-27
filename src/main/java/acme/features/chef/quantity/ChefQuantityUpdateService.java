@@ -36,7 +36,7 @@ public class ChefQuantityUpdateService implements AbstractUpdateService<Chef, Qu
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "number",  "cookingitem.name", "cookingitem.code", "cookingitem.description", "cookingitem.retailPrice", "cookingitem.link", "cookingitem.status", "cookingitem.type");
+		request.bind(entity, errors, "number",  "cookingitem.name", "cookingitem.code", "cookingitem.description", "cookingitem.retailPrice", "cookingitem.link", "cookingitem.type");
 		
 	}
 
@@ -46,7 +46,7 @@ public class ChefQuantityUpdateService implements AbstractUpdateService<Chef, Qu
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "number", "cookingitem.name", "cookingitem.code", "cookingitem.description", "cookingitem.retailPrice", "cookingitem.link", "cookingitem.status", "cookingitem.type");
+		request.unbind(entity, model, "number", "cookingitem.name", "cookingitem.code", "cookingitem.description", "cookingitem.retailPrice", "cookingitem.link",  "cookingitem.type");
 		
 		model.setAttribute("cookingitem", entity.getCookingitem());
 		model.setAttribute("recipe", entity.getRecipe());
