@@ -11,7 +11,7 @@ public class UpdateCokingItemServiceTest extends TestHarness  {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/cooking-item/ingredientForPublish.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(0)
-	public void	CreateIngredientTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link, final String type) {
+	public void	CreateIngredientTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link) {
 
 		super.signIn("chef1", "chef1");
 		
@@ -32,14 +32,14 @@ public class UpdateCokingItemServiceTest extends TestHarness  {
 		super.checkColumnHasValue(recordIndex, 2, description);
 		super.checkColumnHasValue(recordIndex, 3, retailPrice);
 		super.checkColumnHasValue(recordIndex, 4, link);
-		super.checkColumnHasValue(recordIndex, 5, type);
+		
 		
 	}
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/cooking-item/ingredientForUpdate.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(1)
-	public void	UpdateIngredientTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link, final String type) {
+	public void	UpdateIngredientTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link) {
 
 		super.signIn("chef1", "chef1");
 		
@@ -67,7 +67,7 @@ public class UpdateCokingItemServiceTest extends TestHarness  {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/cooking-item/kitchenUtensilForPublish.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(2)
-	public void	CreateKitechenUtensilTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link, final String type) {
+	public void	CreateKitechenUtensilTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link) {
 
 		super.signIn("chef1", "chef1");
 		
@@ -88,14 +88,14 @@ public class UpdateCokingItemServiceTest extends TestHarness  {
 		super.checkColumnHasValue(recordIndex, 2, description);
 		super.checkColumnHasValue(recordIndex, 3, retailPrice);
 		super.checkColumnHasValue(recordIndex, 4, link);
-		super.checkColumnHasValue(recordIndex, 5, type);
+	
 		
 	}
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/cooking-item/kitchenUtensilForUpdate.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(3)
-	public void	UpdateKitchenUtensilTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link, final String type) {
+	public void	UpdateKitchenUtensilTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link) {
 
 		super.signIn("chef1", "chef1");
 		

@@ -11,7 +11,7 @@ public class PublishCookingItemServiceTest extends TestHarness  {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/cooking-item/ingredientForPublish.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void	DeleteIngredientTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link, final String type) {
+	public void	DeleteIngredientTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link) {
 
 		super.signIn("chef1", "chef1");
 		
@@ -32,7 +32,7 @@ public class PublishCookingItemServiceTest extends TestHarness  {
 		super.checkColumnHasValue(recordIndex, 2, description);
 		super.checkColumnHasValue(recordIndex, 3, retailPrice);
 		super.checkColumnHasValue(recordIndex, 4, link);
-		super.checkColumnHasValue(recordIndex, 5, type);
+	
 	
 		
 		super.clickOnListingRecord(recordIndex);
@@ -53,7 +53,7 @@ public class PublishCookingItemServiceTest extends TestHarness  {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/cooking-item/kitchenUtensilForPublish.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void	DeleteKitchenUtensilTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link, final String type) {
+	public void	DeleteKitchenUtensilTest(final int recordIndex, final String name, final String description, final String retailPrice, final String link) {
 
 		super.signIn("chef1", "chef1");
 		
@@ -74,7 +74,7 @@ public class PublishCookingItemServiceTest extends TestHarness  {
 		super.checkColumnHasValue(recordIndex, 2, description);
 		super.checkColumnHasValue(recordIndex, 3, retailPrice);
 		super.checkColumnHasValue(recordIndex, 4, link);
-		super.checkColumnHasValue(recordIndex, 5, type);
+		
 	
 		
 		super.clickOnListingRecord(recordIndex);

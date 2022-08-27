@@ -1,2 +1,2 @@
-recordIndex,name,description,retailPrice,link,type
-0,Prueba1,ingrediente bueno,EUR 15.00,https://google.com,INGREDIENT
+recordIndex,name,description,retailPrice,link
+0,Prueba1,ingrediente bueno,EUR 15.00,https://google.com
