@@ -32,9 +32,12 @@ chef.cookingItem.form.button.update= Update
 chef.cookingItem.form.button.publish= Publish
 detected.isSpam= Spam detected
 chef.precioMinimo= Price greater than zero
-chef.precioMinimo2= Price greater than zero fgegf
+chef.precioMinimo2 = Price greater or equal than zero
+
+chef.retailpriceNull = Retail price null
+
 
 chef.precioMinimo.kitchen= Price greater than zero
 
-
+chef.kitchenutensil.title.codeNotUnique = Code not unique
 epicure.label.moneyExchange = Budget in System's Currency

@@ -112,7 +112,7 @@ public class ChefCookingItemCreateIngredientService implements AbstractCreateSer
 		assert errors != null;
 		
 		final Collection<Configuration> config = this.configurationRepository.findConfigurations();
-		errors.state(request, this.repository.findCookingItemByCode(entity.getCode()) == null, "code", "inventor.toolkit.title.codeNotUnique");
+		errors.state(request, this.repository.findCookingItemByCode(entity.getCode()) == null, "code", "chef.kitchenutensil.title.codeNotUnique");
 		
 		for(final Configuration c : config) {
 
@@ -132,11 +132,11 @@ public class ChefCookingItemCreateIngredientService implements AbstractCreateSer
 
 			if (entity.getType().equals(acme.entities.cookingItem.CookingItemType.INGREDIENT)) {
 				final boolean retailPriceIngredient = retailPrice.getAmount() > 0.;
-				errors.state(request, retailPriceIngredient, "retailPrice", "chef.retailpriceNullMajor");
+				errors.state(request, retailPriceIngredient, "retailPrice", "chef.precioMinimo");
 
 			} else if (entity.getType().equals(acme.entities.cookingItem.CookingItemType.KITCHEN_UTENSIL)) {
 				final boolean retailPriceKitchenUtensil = retailPrice.getAmount() >= 0.;
-				errors.state(request, retailPriceKitchenUtensil, "retailPrice", "chef.retailpriceNullEqualMajor");
+				errors.state(request, retailPriceKitchenUtensil, "retailPrice", "chef.precioMinimo2");
 
 			}
 

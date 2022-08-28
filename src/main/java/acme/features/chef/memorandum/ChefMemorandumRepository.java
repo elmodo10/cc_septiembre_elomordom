@@ -31,5 +31,7 @@ public interface ChefMemorandumRepository extends AbstractRepository {
 
 	@Query("select p from Memorandum p")
 	List<Memorandum> findMemorandum();
+	
+
 
 }
