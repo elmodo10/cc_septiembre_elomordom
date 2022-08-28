@@ -56,7 +56,7 @@ public class ChefFineDishAcceptedService implements AbstractUpdateService<Chef, 
 	
 	@Override
 	public void validate(final Request<FineDish> request, final FineDish entity, final Errors errors) {
-		
+		//Intentionally in blank
 	}
 
 	

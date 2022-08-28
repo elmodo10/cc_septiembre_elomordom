@@ -14,8 +14,8 @@
 			<acme:input-textbox readonly="true" code="authenticated.epicure.finedish.form.label.request" path="request"/>	
 			<acme:input-money readonly="true" code="authenticated.epicure.finedish.form.label.budget" path="budget"/>
 			<acme:input-money code="epicure.label.moneyExchange" path="moneyExchange" readonly="true" />
-			<acme:input-textbox readonly="true" code="authenticated.epicure.finedish.form.label.startsAt" path="startsAt"/>
-			<acme:input-textbox readonly="true" code="authenticated.epicure.finedish.form.label.finishesAt" path="finishesAt"/>
+			<acme:input-moment readonly="true" code="authenticated.epicure.finedish.form.label.startsAt" path="startsAt"/>
+			<acme:input-moment readonly="true" code="authenticated.epicure.finedish.form.label.finishesAt" path="finishesAt"/>
 			<acme:input-url readonly="true" code="authenticated.epicure.finedish.form.label.link" path="link"/>	
 			<acme:input-textarea readonly="true" code="authenticated.epicure.finedish.form.label.chef.organisation" path="chef.organisation"/>
 			<acme:input-textarea readonly="true" code="authenticated.epicure.finedish.form.label.chef.assertion" path="chef.assertion"/>
@@ -36,11 +36,11 @@
 		</jstl:when>
 		<jstl:when test="${command == 'create'}">
 		
-			<acme:input-textbox code="authenticated.epicure.finedish.form.label.code" path="code"/>	
+			<acme:input-textbox  code="authenticated.epicure.finedish.form.label.code" path="code" placeholder="AA:AAA-000"/>	
 			<acme:input-textbox  code="authenticated.epicure.finedish.form.label.request" path="request"/>	
 			<acme:input-money  code="authenticated.epicure.finedish.form.label.budget" path="budget"/>	
-			<acme:input-textbox  code="authenticated.epicure.finedish.form.label.startsAt" path="startsAt"/>
-			<acme:input-textbox  code="authenticated.epicure.finedish.form.label.finishesAt" path="finishesAt"/>
+			<acme:input-moment  code="authenticated.epicure.finedish.form.label.startsAt" path="startsAt" placeholder="0000/00/00 00:00"/>
+			<acme:input-moment  code="authenticated.epicure.finedish.form.label.finishesAt" path="finishesAt" placeholder="0000/00/00 00:00"/>
 			<acme:input-url  code="authenticated.epicure.finedish.form.label.link" path="link"/>	
 			<acme:input-select code="authenticated.epicure.finedish.form.label.chef" path="chefUN">
 			
@@ -58,8 +58,8 @@
 			<acme:input-textbox code="authenticated.epicure.finedish.form.label.code" path="code"/>	
 			<acme:input-textbox code="authenticated.epicure.finedish.form.label.request" path="request"/>	
 			<acme:input-money code="authenticated.epicure.finedish.form.label.budget" path="budget"/>	
-			<acme:input-textbox code="authenticated.epicure.finedish.form.label.startsAt" path="startsAt"/>
-			<acme:input-textbox code="authenticated.epicure.finedish.form.label.finishesAt" path="finishesAt"/>
+			<acme:input-moment code="authenticated.epicure.finedish.form.label.startsAt" path="startsAt"/>
+			<acme:input-moment code="authenticated.epicure.finedish.form.label.finishesAt" path="finishesAt"/>
 			<acme:input-url code="authenticated.epicure.finedish.form.label.link" path="link"/>
 			<acme:input-select code="authenticated.epicure.finedish.form.label.chef" path="chefUN">
 			

@@ -40,4 +40,7 @@ public interface EpicureFineDishRepository extends AbstractRepository {
 	@Query("select p from FineDish p WHERE p.code = :code")
 	FineDish findFineDishByCode(String code);
 	
+	@Query("select s.acceptedCurr from Configuration s")
+	String findAvailableCurrencies();
+	
 }

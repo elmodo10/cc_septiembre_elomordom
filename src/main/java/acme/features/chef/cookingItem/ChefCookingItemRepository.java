@@ -29,5 +29,8 @@ public interface ChefCookingItemRepository extends AbstractRepository{
 	
 	@Query("select i from CookingItem i where i.id = :id")
 	CookingItem findOneCookingItemById(int id);
+	
+	@Query("select s.acceptedCurr from Configuration s")
+	String findAvailableCurrencies();
 
 }

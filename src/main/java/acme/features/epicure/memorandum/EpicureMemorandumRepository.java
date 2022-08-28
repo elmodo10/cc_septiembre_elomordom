@@ -28,5 +28,7 @@ public interface EpicureMemorandumRepository extends AbstractRepository {
 	
 	@Query("select p from Memorandum p")
 	List<Memorandum> findMemorandum();
+	
+
 
 }

@@ -30,9 +30,9 @@ public class EpicureDashboard implements Serializable {
 	}
 	
 	
-	Map<Status,  Integer> totalNumberFineDishes;
+	private Map<Status,  Integer> totalNumberFineDishes;
 	
-	Map<Status, Map<String, Map<String, Double>>> FineDishesBudgets;
+	private Map<Status, Map<String, Map<String, Double>>> FineDishesBudgets;
 	
 
 	// Derived attributes -----------------------------------------------------

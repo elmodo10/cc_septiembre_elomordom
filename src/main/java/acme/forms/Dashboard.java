@@ -22,33 +22,15 @@ public class Dashboard implements Serializable {
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
+
 	
-	/*
-	 * 	Old attrs:
-	 * 	Integer	totalNumberComponents;
-	 *	Integer	totalNumberTools;
-	 *	Integer	totalNumberPatronagesProposed;
-	 *	Integer	totalNumberPatronagesAccepted;
-	 *	Integer	totalNumberPatronagesDenied;
-	 *	
-	 *	averageRetailPriceComponents
-	 *  deviationRetailPriceComponents
-	 *  minimunRetailPriceComponents
-	 *  maximunRetailPriceComponents
-		
-		maximunPatronagesBudgetPatronagesProposed
-		minimunPatronagesBudgetPatronagesProposed
-		deviationPatronagesBudgetProposed
-		averagePatronagesBudgetProposed
-	 */
+	private Map<String, Integer> totalsData;
 	
-	Map<String, Integer> totalsData;
+	private Map<Pair<String, String>, Map<String, Double>> ingredientRetailPrice;
 	
-	Map<Pair<String, String>, Map<String, Double>> ingredientRetailPrice;
+	private Map<CookingItemType, Map<String, Map<String, Double>>> CookingItemsRetailPrice;
 	
-	Map<CookingItemType, Map<String, Map<String, Double>>> CookingItemsRetailPrice;
-	
-	Map<Status, Map<String, Double>> FineDishesBudgets;
+	private Map<Status, Map<String, Double>> FineDishesBudgets;
 
 	// Derived attributes -----------------------------------------------------
 

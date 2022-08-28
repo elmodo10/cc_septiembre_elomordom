@@ -67,7 +67,7 @@ public class ChefMemorandumCreateService implements AbstractCreateService<Chef, 
 	}
 	
 	private String generateCode(final String fineDishCode) {
-		final List<String> code = new ArrayList<String>();
+		final List<String> code = new ArrayList<>();
 		
 		code.add(fineDishCode);
 		code.add(String.format("%04d" , this.repository.findMemorandum().size()+1));

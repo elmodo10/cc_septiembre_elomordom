@@ -1,8 +1,10 @@
 package acme.features.epicure.fineDish;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -103,6 +105,14 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 		return result;
 	}
 	
+	private boolean validateAvailableCurrencyRetailPrice(final Money retailPrice) {
+
+		final String currencies = this.repository.findAvailableCurrencies();
+		final List<Object> listCurrencies = Arrays.asList((Object[]) currencies.split(","));
+
+		return listCurrencies.contains(retailPrice.getCurrency());
+	}
+	
 	private String generateCode() {
         String code = "";
         final List<String> alphabet = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
@@ -143,16 +153,28 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 		if(finedish != null) {
 			errors.state(request, finedish.getId() == entity.getId(), "code", "epicure.item.title.codeNotUnique");
 		}
- 
-		errors.state(request, entity.getBudget().getAmount() > 0.00, "budget", "authenticated.epicure.finedish.list.label.priceGreatherZero");
+		
+		if(!errors.hasErrors("startsAt") && !errors.hasErrors("finishesAt")) {
+			
+			final Date minimumStartAt= DateUtils.addMonths(entity.getCreationTime(),1);
+			errors.state(request,entity.getStartsAt().after(minimumStartAt), "startsAt", "epicure.finedish.error.minimumStartAt");
+			
+			final Date minimumFinishesAt=DateUtils.addMonths(entity.getStartsAt(), 1);
+			errors.state(request,entity.getFinishesAt().after(minimumFinishesAt), "finishesAt", "epicure.finedish.error.minimumFinishesAt");
+		
+		}
+			
+		
+		if (!errors.hasErrors("budget")) {
 
-		final Date minimumStartAt= DateUtils.addMonths(entity.getCreationTime(),1);
-		errors.state(request,entity.getStartsAt().after(minimumStartAt), "startsAt", "epicure.finedish.error.minimumStartAt");
-		
-		final Date minimumFinishesAt=DateUtils.addMonths(entity.getStartsAt(), 1);
-		errors.state(request,entity.getFinishesAt().after(minimumFinishesAt), "finishesAt", "epicure.finedish.error.minimumFinishesAt");
-		
-	
+			final Money budget = entity.getBudget();
+			final boolean availableCurrency = this.validateAvailableCurrencyRetailPrice(budget);
+			
+			errors.state(request, availableCurrency, "budget", "epicure.budgetNull");
+
+			errors.state(request, entity.getBudget().getAmount() > 0.00, "budget", "authenticated.epicure.finedish.list.label.priceGreatherZero");
+
+			}
 		
 		
 	}
