@@ -45,10 +45,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setCookingItemsRetailPrice(this.getCookingItemsData(result.getDataKeys()));
 		result.setIngredientRetailPrice(this.getComponentsData(result.getDataKeys()));
 		
-		//System.out.println(this.getItemsData(result.getDataKeys()).toString());
-		
-		//result.setComponentsData(this.getComponentsData(result.getDataKeys()));
-		
 		return result;
 	}
 
@@ -88,7 +84,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			final String budgetData = this.repository.getFineDishBudgetByStatus(status);
 			final String[] budget = budgetData.split(",");
 			
-			final List<Double> budgetDbl = new ArrayList<Double>();
+			final List<Double> budgetDbl = new ArrayList<>();
 			for(final String b : budget) {
 				budgetDbl.add(Double.valueOf(b));
 			}

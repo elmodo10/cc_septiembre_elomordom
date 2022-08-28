@@ -80,6 +80,14 @@ public class ChefCookingItemCreateKitchenUtensilService implements AbstractCreat
 
 		return result;
 	}
+	
+	private boolean validateAvailableCurrencyRetailPrice(final Money retailPrice) {
+
+		final String currencies = this.repository.findAvailableCurrencies();
+		final List<Object> listCurrencies = Arrays.asList((Object[]) currencies.split(","));
+
+		return listCurrencies.contains(retailPrice.getCurrency());
+	}
 
 	private String generateCode() {
 		String code = "";
@@ -116,10 +124,22 @@ public class ChefCookingItemCreateKitchenUtensilService implements AbstractCreat
 			errors.state(request, !c.isSpam(entity.getLink()), "link", "detected.isSpam");
 		}
 
-		if (entity.getType() == acme.entities.cookingItem.CookingItemType.KITCHEN_UTENSIL) {
-			errors.state(request, entity.getRetailPrice().getAmount() > 0.00, "retailPrice", "chef.precioMinimo");
-		} else {
-			errors.state(request, entity.getRetailPrice().getAmount() >= 0.00, "retailPrice", "chef.precioMinimo.kitchen");
+		if (!errors.hasErrors("retailPrice")) {
+
+			final Money retailPrice = entity.getRetailPrice();
+			final boolean availableCurrency = this.validateAvailableCurrencyRetailPrice(retailPrice);
+			errors.state(request, availableCurrency, "retailPrice", "chef.retailpriceNull");
+
+			if (entity.getType().equals(acme.entities.cookingItem.CookingItemType.KITCHEN_UTENSIL)) {
+				final boolean retailPriceKitchenUtensil = retailPrice.getAmount() > 0.;
+				errors.state(request, retailPriceKitchenUtensil, "retailPrice", "chef.retailpriceNullMajor");
+
+			} else if (entity.getType().equals(acme.entities.cookingItem.CookingItemType.INGREDIENT)) {
+				final boolean retailPriceIngredient = retailPrice.getAmount() >= 0.;
+				errors.state(request, retailPriceIngredient, "retailPrice", "chef.retailpriceNullEqualMajor");
+
+			}
+
 		}
 
 	}
