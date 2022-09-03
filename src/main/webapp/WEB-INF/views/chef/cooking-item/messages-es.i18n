@@ -41,3 +41,5 @@ chef.retailpriceNull = Precio nulo
 chef.kitchenutensil.title.codeNotUnique = Código no único
 
 epicure.label.moneyExchange = Presupuesto en la divisa del sistema
+
+chef.pimpam.form.button.list= Pimpams

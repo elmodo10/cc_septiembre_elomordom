@@ -64,9 +64,9 @@ public class Pimpam extends AbstractEntity {
 	@URL
 	protected String link;
 	
+	@ManyToOne(optional=false)
 	@NotNull
 	@Valid
-	@ManyToOne(optional=false)
 	protected CookingItem cookingItem;
 	
 }
