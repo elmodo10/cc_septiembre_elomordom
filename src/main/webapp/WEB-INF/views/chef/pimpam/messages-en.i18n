@@ -16,5 +16,9 @@ chef.pimpam.form.label.finishesAt= FinichedAt
 chef.pimpam.form.label.budget= Budget	
 chef.pimpam.form.label.link= Link
 
+chef.pimpam.form.button.create= Create Pimpam
+chef.pimpam.form.button.delete= Delete Pimpam
+chef.pimpam.form.button.update=Update Pimpam
+
 
 

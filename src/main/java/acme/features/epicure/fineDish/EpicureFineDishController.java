@@ -5,9 +5,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-
 import acme.entities.fineDish.FineDish;
-
 import acme.framework.controllers.AbstractController;
 import acme.roles.Epicure;
 
@@ -15,15 +13,10 @@ import acme.roles.Epicure;
 public class EpicureFineDishController extends AbstractController<Epicure, FineDish> {
 
 	
-	
-	
-	
 
 	@Autowired
 	protected EpicureFineDishListService	listService;
 
-
-	
 	@Autowired
 	protected EpicureFineDishShowService	showService;
 	
