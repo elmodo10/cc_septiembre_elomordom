@@ -2,6 +2,7 @@
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
+<%@ page import="acme.entities.cookingItem.Status" %>
 
 <acme:list>
 
@@ -17,6 +18,12 @@
 
 </acme:list>
 
+		<jstl:if test="${statusci == 'NONE_PUBLISHED'}">
+	
+		<acme:button code="chef.pimpam.form.button.create" action="/chef/pimpam/create?id=${param.id}"/>
+		
+		</jstl:if>
+		
 
 
 		

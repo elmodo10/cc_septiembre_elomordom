@@ -19,8 +19,6 @@
 		<acme:input-url code="chef.recipe.form.label.link" path="link" readonly="true"/>
 
 	
-		
-	
 	<jstl:if test="${status == 'PUBLISHED' }">
 		<acme:button code="chef.recipe.form.buttom.items" action="/chef/quantity/list-by-recipe?id=${id}"/>
 	</jstl:if>
@@ -52,9 +50,7 @@
 		<acme:input-url code="chef.recipe.form.label.link" path="link"/>
 		<acme:submit code="chef.recipe.form.button.update" action="/chef/recipe/update"/>
 	</jstl:when>
-		
-	
-	
+
 	
 	</jstl:choose>
 
