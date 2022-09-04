@@ -27,4 +27,18 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("SELECT cookingitem.retailPrice.currency, cookingitem.description, MIN(cookingitem.retailPrice.amount), MAX(cookingitem.retailPrice.amount), AVG(cookingitem.retailPrice.amount), STDDEV(cookingitem.retailPrice.amount) from CookingItem cookingitem WHERE cookingitem.type = acme.entities.cookingItem.CookingItemType.INGREDIENT GROUP BY cookingitem.retailPrice.currency, cookingitem.description")
 	List<String> getingredientsInCurrencies();
 	
+	
+	
+	//control check dashboard
+	
+	@Query("SELECT p.budget.currency, MIN(p.budget.amount), MAX(p.budget.amount), AVG(p.budget.amount), STDDEV(p.budget.amount) from Pimpam p  GROUP BY p.budget.currency")
+	List<String> getPimpamBudget();
+	
+	@Query("SELECT COUNT(c) FROM Pimpam c")
+    Integer getAllPimpam();
+
+  
+    @Query("SELECT COUNT(i) FROM CookingItem i where i.type = :type")
+    Integer getAllArtefacts(CookingItemType type);
+	
 }

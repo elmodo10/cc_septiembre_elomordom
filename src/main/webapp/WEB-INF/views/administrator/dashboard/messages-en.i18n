@@ -42,3 +42,7 @@ administrator.dashboard.form.label.currency = Currency
 administrator.dashboard.form.label.technology = Technology
 
 administrator.dashboard.form.label.in = in
+
+
+administrator.dashboard.pimpam.budged = Pimpam Budged
+administrator.dashboard.pimpam.ratio = Pimpam and Artefact Ratio
