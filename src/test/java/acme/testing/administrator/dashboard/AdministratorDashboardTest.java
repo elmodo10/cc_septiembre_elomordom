@@ -106,6 +106,17 @@ public class AdministratorDashboardTest extends TestHarness {
 		inputsMap.put("//*[@id=\"items\"]/div[2]/div[3]/div/div/label/input", "14.285714285714286");
 		inputsMap.put("//*[@id=\"items\"]/div[2]/div[4]/div/div/label/input", "1.749635530559413");
 		
+		
+		//Control Check
+		// Ratio Pimpam CookingItem
+		inputsMap.put("//*[@id=\"items\"]/div[1]/div/div/div/label/input", "17.0");
+				
+		// Pimpam -> currency eur
+		inputsMap.put("//*[@id=\"items\"]/div/div[1]/div/div/label/input", "17.0");
+		inputsMap.put("//*[@id=\"items\"]/div/div[2]/div/div/label/input", "10.0");
+		inputsMap.put("//*[@id=\"items\"]/div/div[3]/div/div/label/input", "11.428571428571429");
+		inputsMap.put("//*[@id=\"items\"]/div/div[4]/div/div/label/input", "2.498979383505129");
+				
 
 		
 		for(final Map.Entry<String, String> entry : inputsMap.entrySet()) {

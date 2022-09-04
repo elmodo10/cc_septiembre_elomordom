@@ -45,6 +45,14 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setCookingItemsRetailPrice(this.getCookingItemsData(result.getDataKeys()));
 		result.setIngredientRetailPrice(this.getComponentsData(result.getDataKeys()));
 		
+		
+		
+		
+		//controlcheck
+		result.setPimpamBudget(this.getPimpamBudgets(result.getDataKeys()));
+		
+		result.setRatio(Double.valueOf(this.repository.getAllPimpam())/Double.valueOf(this.repository.getAllArtefacts(CookingItemType.INGREDIENT)));
+		//fin controlcheck
 		return result;
 	}
 
@@ -54,8 +62,36 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "totalsData", "FineDishesBudgets", "CookingItemsRetailPrice", "ingredientRetailPrice");
+		request.unbind(entity, model, "totalsData", "FineDishesBudgets", "CookingItemsRetailPrice", "ingredientRetailPrice","pimpamBudget","ratio");
 	}
+	
+	
+	
+	//control check
+	private Map<String, Map<String, Double>> getPimpamBudgets(final List<String> dataKeys ) {
+		final Map<String, Map<String, Double>> pimpamBudgets = new HashMap<String, Map<String, Double>>();
+		
+		
+			
+			final List<String> budgepatron = this.repository.getPimpamBudget();
+			for(final String i : budgepatron) {
+				final String[] item = i.split(",");
+				
+				final Map<String, Double> im = new HashMap<String, Double>();
+				im.put(dataKeys.get(0), Double.valueOf(item[1]));
+				im.put(dataKeys.get(1), Double.valueOf(item[2]));
+				im.put(dataKeys.get(2), Double.valueOf(item[3]));
+				im.put(dataKeys.get(3), Double.valueOf(item[4]));
+				
+				pimpamBudgets.put(item[0], im);
+			}	
+		
+		return pimpamBudgets;
+		
+			
+	}
+	
+	//fin control check
 	
 	private Map<String, Integer> getTotals(final List<String> totalsKeys) {
 		final Map<String, Integer> totals = new HashMap<String, Integer>();

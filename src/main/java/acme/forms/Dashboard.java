@@ -31,6 +31,13 @@ public class Dashboard implements Serializable {
 	private Map<CookingItemType, Map<String, Map<String, Double>>> CookingItemsRetailPrice;
 	
 	private Map<Status, Map<String, Double>> FineDishesBudgets;
+	
+	//control check
+	
+	Double ratio;
+	// aqui termina control check
+	
+	private Map<String, Map<String, Double>> pimpamBudget;
 
 	// Derived attributes -----------------------------------------------------
 
