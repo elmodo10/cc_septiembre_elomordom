@@ -77,11 +77,32 @@ public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimp
 		
 		}
 		
+//		if(entity.getInstationMoment()!=null) {
+//        final Calendar calendar2 = Calendar.getInstance();
+//        calendar2.setTime(entity.getInstationMoment());
+//        final String day= String.format("%02d" , calendar2.get(Calendar.DAY_OF_MONTH));
+//        final String month= String.format("%02d" , calendar2.get(Calendar.MONTH));
+//        final String year = String.valueOf(calendar2.get(Calendar.YEAR)).substring(2);
+//        final String[] codesplit = entity.getCode().split("-");
+//        boolean bol1;
+//        boolean bol2;					
+//        boolean bol3;
+//        
+//        bol1 = codesplit[0] == year.substring(2);
+//        bol2 = codesplit[1] == year;
+//        bol3 = codesplit[2] == year;
+//
+//        errors.state(request,(bol1&bol2&bol3) , "code", "administrator.configuration.currency.notExist");
+//		}
+      
 		final Pimpam ci = this.repository.findPimpamByCode(entity.getCode());
 		
 		if(ci != null) {
 			errors.state(request, ci.getId() == entity.getId(), "code", "inventor.item.title.codeNotUnique");
 		}
+		
+		
+		
 		
 	}
 	

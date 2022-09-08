@@ -27,11 +27,11 @@
 	</jstl:when>
 	
 		<jstl:when test="${command == 'create'}">
-			<acme:input-textbox code="chef.pimpam.form.label.code" path="code" readonly="true"  />
-			<acme:input-textbox code="chef.pimpam.form.label.instationMoment" path="instationMoment"/>
+			<acme:input-textbox code="chef.pimpam.form.label.code" path="code"  />
+			<acme:input-textbox code="chef.pimpam.form.label.instationMoment" path="instationMoment" readonly="true"/>
 			<acme:input-textbox code="chef.pimpam.form.label.title" path="title"/>
 			<acme:input-textbox code="chef.pimpam.form.label.description" path="description"/>
-			<acme:input-textbox code="chef.pimpam.form.label.startsAT" path="startsAt" />
+			<acme:input-textbox code="chef.pimpam.form.label.startsAt" path="startsAt" />
 			<acme:input-textbox code="chef.pimpam.form.label.finishesAt" path="finishesAt"/>
 			<acme:input-money code="chef.pimpam.form.label.budget" path="budget"/>
 			<acme:input-textbox code="chef.pimpam.form.label.link" path="link"/>
@@ -40,11 +40,11 @@
 		</jstl:when>
 		
 		<jstl:when test = "${command == 'update' }">
-				<acme:input-textbox code="chef.pimpam.form.label.code" path="code" readonly="true"  />
-			<acme:input-textbox code="chef.pimpam.form.label.instationMoment" path="instationMoment"/>
+				<acme:input-textbox code="chef.pimpam.form.label.code" path="code"  />
+			<acme:input-textbox code="chef.pimpam.form.label.instationMoment" path="instationMoment" readonly="true"/>
 			<acme:input-textbox code="chef.pimpam.form.label.title" path="title"/>
 			<acme:input-textbox code="chef.pimpam.form.label.description" path="description"/>
-			<acme:input-textbox code="chef.pimpam.form.label.startsAT" path="startsAt" />
+			<acme:input-textbox code="chef.pimpam.form.label.startsAt" path="startsAt" />
 			<acme:input-textbox code="chef.pimpam.form.label.finishesAt" path="finishesAt"/>
 			<acme:input-money code="chef.pimpam.form.label.budget" path="budget"/>
 			<acme:input-textbox code="chef.pimpam.form.label.link" path="link"/>
