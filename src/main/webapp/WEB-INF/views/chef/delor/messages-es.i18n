@@ -1,0 +1,24 @@
+chef.pimpam.list.label.code= Keylet
+chef.pimpam.list.label.instationMoment= Instantion Moment
+chef.pimpam.list.label.title= Subjet
+chef.pimpam.list.label.description= Explanation
+chef.pimpam.list.label.startsAt= StartsAt
+chef.pimpam.list.label.finishesAt= FinichedAt
+chef.pimpam.list.label.budget= income	
+chef.pimpam.list.label.link= moreInfo
+
+chef.pimpam.form.label.code= Keylet
+chef.pimpam.form.label.instationMoment= Instantion Moment
+chef.pimpam.form.label.title= Subjet
+chef.pimpam.form.label.description= Explanation
+chef.pimpam.form.label.startsAt= StartsAt
+chef.pimpam.form.label.finishesAt= FinichedAt
+chef.pimpam.form.label.budget= income	
+chef.pimpam.form.label.link= moreInfo
+
+chef.pimpam.form.button.create= Crea tu delor
+chef.pimpam.form.button.delete= Borra este delor
+chef.pimpam.form.button.update= Actualiza este delor
+
+epicure.finedish.error.minimumFinishesAt = una semana de largo junto a cuando empieza
+administrator.configuration.currency.notExist = la segunda parte del patern despues de : debe ser yymmdd siendo la fecha de creacion del delor

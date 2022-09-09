@@ -1,4 +1,4 @@
-package acme.entities.pimpam;
+package acme.entities.delor;
 
 import java.util.Date;
 
@@ -25,7 +25,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Pimpam extends AbstractEntity {
+public class Delor extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
@@ -33,22 +33,22 @@ public class Pimpam extends AbstractEntity {
 	//El pattern nos lo daran para interpretarlo
 	@Column(unique=true)
 	@NotBlank
-	@Pattern(regexp = "^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
-	protected String code;
+	@Pattern(regexp = "^[0-9]{6}:[0-9]{6}$")
+	protected String keylet;
 	
 	
     @Temporal(TemporalType.TIMESTAMP)
     @Past
     @NotNull
-    protected Date instationMoment;
+    protected Date instantionMoment;
     
     @NotBlank
     @Length(min=1, max=100)
-    protected String title;
+    protected String subjet;
     
 	@NotBlank
 	@Length(min=1, max=255)
-	protected String description;
+	protected String explanation;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
@@ -59,10 +59,10 @@ public class Pimpam extends AbstractEntity {
 	protected Date finishesAt;
 	
 	@NotNull
-	protected Money budget;
+	protected Money income;
 	
 	@URL
-	protected String link;
+	protected String moreInfo;
 	
 	@ManyToOne(optional=false)
 	@NotNull
